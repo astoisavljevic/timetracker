@@ -11,12 +11,12 @@
 --
 
 create table stt_task_type(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',
 	name varchar(255) not null,
 	description varchar(255) not null,
 	color varchar(255) not null,
-	status varchar(255) not null,
-	primary key (id)
+	status varchar(255) not null
 ) ENGINE=InnoDB;
 
 create unique index idx_stt_task_type_name on stt_task_type(name);
@@ -35,12 +35,12 @@ insert into stt_task_type(name, description, color, status) values('Proposal', '
 --
 
 create table stt_activity_type(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',
 	name varchar(255) not null,
 	description varchar(255) not null,
 	color varchar(255) not null,
-	status varchar(255) not null,
-	primary key (id)	
+	status varchar(255) not null
 ) ENGINE=InnoDB;
 
 create unique index idx_stt_activity_type_name on stt_activity_type(name);
@@ -57,9 +57,9 @@ insert into stt_activity_type(name, description, color, status) values('Testing'
 
 
 create table stt_role(
-	id bigint(20) not null AUTO_INCREMENT,
-	name varchar(80) not null,
-	primary key(id)
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',
+	name varchar(80) not null
 ) ENGINE=InnoDB;
 
 create unique index idx_stt_role_name on stt_role(name);
@@ -73,7 +73,8 @@ insert into stt_role(id, name) values(2, 'USER');
 --
 
 create table stt_user(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',
 	email varchar(255) not null,
 	username varchar(30) not null,
 	password varchar(30) not null,
@@ -81,7 +82,6 @@ create table stt_user(
 	last_name varchar(80),
 	enabled bit(1),
 	role_id bigint(20) not null,
-	primary key(id),
 	constraint fk_stt_user_role foreign key (role_id) references stt_role(id)
 ) ENGINE=InnoDB;
 
@@ -104,15 +104,15 @@ insert into stt_user(email, username, password, enabled, role_id) values ('teste
 --
 
 create table stt_project(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',	
 	name varchar(255) not null,
 	description varchar(255) not null,
 	start_on date,
 	color varchar(255),
 	company_code varchar(255) not null,
 	company_name varchar(255) not null,
-	status varchar(255),
-	primary key(id)
+	status varchar(255)
 ) ENGINE=InnoDB;
 
 create unique index idx_stt_project_name on stt_project(name);
@@ -125,10 +125,10 @@ create unique index idx_stt_project_company_name on stt_project(company_name);
 --
 
 create table stt_project_member(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',	
 	user_id bigint(20) not null,
 	project_id bigint(20) not null,
-	primary key(id),
 	constraint fk_stt_project_member_user foreign key (user_id) references stt_user(id),
 	constraint fk_stt_project_member_project foreign key (project_id) references stt_project(id)	
 ) ENGINE=InnoDB;
@@ -138,7 +138,8 @@ create table stt_project_member(
 --
 
 create table stt_project_task(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',
 	project_id bigint(20) not null,
 	user_id bigint(20) not null,
 	task_type_id bigint(20) not null,
@@ -149,7 +150,6 @@ create table stt_project_task(
 	bid_hours decimal,
 	color varchar(255),
 	status varchar(255),
-	primary key(id),
 	constraint fk_stt_project_task_user foreign key (user_id) references stt_user(id),
 	constraint fk_stt_project_task_project foreign key (project_id) references stt_project(id),
 	constraint fk_stt_project_task_task_type foreign key (task_type_id) references stt_task_type(id)		
@@ -161,7 +161,8 @@ create table stt_project_task(
 --
 
 create table stt_time_sheet(
-	id bigint(20) not null AUTO_INCREMENT,
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default '0',	
 	project_task_id bigint(20) not null,
 	user_id bigint(20) not null,
 	activity_type_id bigint(20) not null,
@@ -169,23 +170,7 @@ create table stt_time_sheet(
 	hours decimal,
 	description varchar(255),
 	status varchar(255),
-	primary key(id),
 	constraint fk_stt_time_sheet_project_task foreign key (project_task_id) references stt_project_task(id),
 	constraint fk_stt_time_sheet_user foreign key (user_id) references stt_user(id),
 	constraint fk_stt_time_sheet_activity_type foreign key (activity_type_id) references stt_activity_type(id)		
 ) ENGINE=InnoDB;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
