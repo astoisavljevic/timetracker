@@ -10,3 +10,4 @@
 
 core/target/
 core/.classpath
+core/test-output/
