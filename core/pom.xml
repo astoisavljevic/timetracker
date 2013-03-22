@@ -6,4 +6,12 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>core</artifactId>
+  
+  <dependencies>
+      <!-- ### connection pool ### -->
+      <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-jdbc</artifactId>
+      </dependency>
+  </dependencies>
 </project>
