@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.common;
+package rs.in.staleksit.timetracker.core.domain.common;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
