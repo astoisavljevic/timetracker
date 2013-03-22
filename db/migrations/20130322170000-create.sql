@@ -1,4 +1,16 @@
-create table STT_TASK_TYPE(
+--
+-- Simple Time Tracker Database Model
+--
+-- Author: Aleksandar Stoisavljevic
+-- email: staleks@gmail.com
+-- webpage: http://www.staleksit.in.rs
+--
+
+-- 
+-- Table structure: stt_task_type
+--
+
+create table stt_task_type(
 	id bigint(20) not null AUTO_INCREMENT,
 	name varchar(255) not null,
 	description varchar(255) not null,
@@ -7,6 +19,173 @@ create table STT_TASK_TYPE(
 	primary key (id)
 ) ENGINE=InnoDB;
 
-insert into STT_TASK_TYPE(name, description, color, status) values('Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
-insert into STT_TASK_TYPE(name, description, color, status) values('Maintanance', 'working on existing features', '#00FF00', 'OPEN');
-insert into STT_TASK_TYPE(name, description, color, status) values('Proposal', 'sales force', '#0000FF', 'OPEN');
+create unique index idx_stt_task_type_name on stt_task_type(name);
+
+--
+-- Table: stt_task_type
+-- data import
+--
+
+insert into stt_task_type(name, description, color, status) values('Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
+insert into stt_task_type(name, description, color, status) values('Maintanance', 'working on existing features', '#00FF00', 'OPEN');
+insert into stt_task_type(name, description, color, status) values('Proposal', 'sales force', '#0000FF', 'OPEN');
+
+--
+-- Table structure: stt_activity_type
+--
+
+create table stt_activity_type(
+	id bigint(20) not null AUTO_INCREMENT,
+	name varchar(255) not null,
+	description varchar(255) not null,
+	color varchar(255) not null,
+	status varchar(255) not null,
+	primary key (id)	
+) ENGINE=InnoDB;
+
+create unique index idx_stt_activity_type_name on stt_activity_type(name);
+
+--
+-- Table: stt_activity_type
+-- data import
+--
+
+insert into stt_activity_type(name, description, color, status) values('Design', 'design architectual solutions, ideas, etc.', '#FF0000', 'OPEN');
+insert into stt_activity_type(name, description, color, status) values('Coding', 'actual writing code', '#00FF00', 'OPEN');
+insert into stt_activity_type(name, description, color, status) values('Debugging', 'debugging code', '#0000FF', 'OPEN');
+insert into stt_activity_type(name, description, color, status) values('Testing', 'testing code', '#000000', 'OPEN');
+
+
+create table stt_role(
+	id bigint(20) not null AUTO_INCREMENT,
+	name varchar(80) not null,
+	primary key(id)
+) ENGINE=InnoDB;
+
+create unique index idx_stt_role_name on stt_role(name);
+
+insert into stt_role(id, name) values(1, 'ADMIN');
+insert into stt_role(id, name) values(2, 'USER');
+
+
+--
+-- Table structure: stt_user
+--
+
+create table stt_user(
+	id bigint(20) not null AUTO_INCREMENT,
+	email varchar(255) not null,
+	username varchar(30) not null,
+	password varchar(30) not null,
+	first_name varchar(80),
+	last_name varchar(80),
+	enabled bit(1),
+	role_id bigint(20) not null,
+	primary key(id),
+	constraint fk_stt_user_role foreign key (role_id) references stt_role(id)
+) ENGINE=InnoDB;
+
+create unique index idx_stt_user_email on stt_user(email);
+create unique index idx_stt_user_username on stt_user(username);
+
+--
+-- Table: stt_user
+-- data import
+--
+
+insert into stt_user(email, username, password, enabled, role_id) values ('admin@gmail.com', 'admin', 'admin', TRUE, 1);
+insert into stt_user(email, username, password, enabled, role_id) values ('java.developer@gmail.com', 'java-developer', 'java-developer', TRUE, 2);
+insert into stt_user(email, username, password, enabled, role_id) values ('fe.developer@gmail.com', 'fe-developer', 'fe-developer', TRUE, 2);
+insert into stt_user(email, username, password, enabled, role_id) values ('tester@gmail.com', 'test', 'test', TRUE, 2);
+
+
+--
+-- Table structure: stt_project
+--
+
+create table stt_project(
+	id bigint(20) not null AUTO_INCREMENT,
+	name varchar(255) not null,
+	description varchar(255) not null,
+	start_on date,
+	color varchar(255),
+	company_code varchar(255) not null,
+	company_name varchar(255) not null,
+	status varchar(255),
+	primary key(id)
+) ENGINE=InnoDB;
+
+create unique index idx_stt_project_name on stt_project(name);
+create unique index idx_stt_project_company_code on stt_project(company_code);
+create unique index idx_stt_project_company_name on stt_project(company_name);
+
+
+--
+-- Table structure: stt_project_member
+--
+
+create table stt_project_member(
+	id bigint(20) not null AUTO_INCREMENT,
+	user_id bigint(20) not null,
+	project_id bigint(20) not null,
+	primary key(id),
+	constraint fk_stt_project_member_user foreign key (user_id) references stt_user(id),
+	constraint fk_stt_project_member_project foreign key (project_id) references stt_project(id)	
+) ENGINE=InnoDB;
+
+--
+-- Table structure: stt_project_task
+--
+
+create table stt_project_task(
+	id bigint(20) not null AUTO_INCREMENT,
+	project_id bigint(20) not null,
+	user_id bigint(20) not null,
+	task_type_id bigint(20) not null,
+	name varchar(255) not null,
+	description varchar(255) not null,
+	start_on date,
+	due_on date,
+	bid_hours decimal,
+	color varchar(255),
+	status varchar(255),
+	primary key(id),
+	constraint fk_stt_project_task_user foreign key (user_id) references stt_user(id),
+	constraint fk_stt_project_task_project foreign key (project_id) references stt_project(id),
+	constraint fk_stt_project_task_task_type foreign key (task_type_id) references stt_task_type(id)		
+) ENGINE=InnoDB;
+
+
+--
+-- Table structure: stt_time_sheet
+--
+
+create table stt_time_sheet(
+	id bigint(20) not null AUTO_INCREMENT,
+	project_task_id bigint(20) not null,
+	user_id bigint(20) not null,
+	activity_type_id bigint(20) not null,
+	started_at datetime,
+	hours decimal,
+	description varchar(255),
+	status varchar(255),
+	primary key(id),
+	constraint fk_stt_time_sheet_project_task foreign key (project_task_id) references stt_project_task(id),
+	constraint fk_stt_time_sheet_user foreign key (user_id) references stt_user(id),
+	constraint fk_stt_time_sheet_activity_type foreign key (activity_type_id) references stt_activity_type(id)		
+) ENGINE=InnoDB;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
