@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.domain.common;
+package rs.in.staleksit.timetracker.core.domain.project;
 
 /**
  * @author a.stoisavljevic

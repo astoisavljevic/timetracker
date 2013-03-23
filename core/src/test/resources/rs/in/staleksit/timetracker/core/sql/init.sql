@@ -6,3 +6,6 @@ insert into stt_activity_type(name, description, color, status) values('Testing'
 
 insert into stt_role(id, name) values(1, 'ADMIN');
 insert into stt_role(id, name) values(2, 'USER');
+
+insert into stt_user(email, username, password, enabled, role_id) values ('admin@gmail.com', 'admin', 'admin', TRUE, 1);
+insert into stt_user(email, username, password, enabled, role_id) values ('java.developer@gmail.com', 'java', 'java', TRUE, 2);

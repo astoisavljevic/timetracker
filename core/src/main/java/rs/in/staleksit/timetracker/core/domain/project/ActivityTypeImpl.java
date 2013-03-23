@@ -1,11 +1,13 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.domain.common;
+package rs.in.staleksit.timetracker.core.domain.project;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import rs.in.staleksit.timetracker.core.domain.common.AbstractDomainModel;
 
 /**
  * @author a.stoisavljevic

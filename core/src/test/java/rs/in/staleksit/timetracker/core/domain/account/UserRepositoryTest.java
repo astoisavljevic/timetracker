@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.domain.common;
+package rs.in.staleksit.timetracker.core.domain.account;
 
 import static org.testng.Assert.*;
 
@@ -10,23 +10,20 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import rs.in.staleksit.timetracker.core.domain.project.ActivityTypeImpl;
-import rs.in.staleksit.timetracker.core.domain.project.ActivityTypeRepository;
-
 /**
  * @author a.stoisavljevic
  *
  */
-@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.domain.common.ActivityTypeRepositoryTest"})
+@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.domain.account.UserRepositoryTest"})
 @ContextConfiguration(locations = {"classpath:/rs/in/staleksit/timetracker/core/ctx/timetracker-data-ctx.xml", 
 		"classpath:/rs/in/staleksit/timetracker/core/ctx/test-timetracker-data-ctx.xml"})
-public class ActivityTypeRepositoryTest extends AbstractTestNGSpringContextTests {
+public class UserRepositoryTest extends AbstractTestNGSpringContextTests {
 	
-	private ActivityTypeRepository repository;
+	private UserRepository repository;
 	
 	@BeforeClass
 	public void setUp() {
-		repository = applicationContext.getBean(ActivityTypeRepository.class);
+		repository = applicationContext.getBean(UserRepository.class);
 	}
 	
 	public void testNotNull() {
@@ -35,9 +32,9 @@ public class ActivityTypeRepositoryTest extends AbstractTestNGSpringContextTests
 	
 	public void testFindOne() {
 		assertNotNull(repository);
-		ActivityTypeImpl result = repository.findOne(2);
+		UserImpl result = repository.findOne(1);
 		assertNotNull(result);
-		assertTrue(result.getName().equals("Coding"));
+		assertTrue(result.getUsername().equals("admin"));
 	}
-	
+
 }
