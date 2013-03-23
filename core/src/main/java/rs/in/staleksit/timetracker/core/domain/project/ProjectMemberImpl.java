@@ -3,7 +3,6 @@
  */
 package rs.in.staleksit.timetracker.core.domain.project;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;

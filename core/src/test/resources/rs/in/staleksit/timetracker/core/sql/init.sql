@@ -16,3 +16,8 @@ insert into stt_task_type(name, description, color, status) values('Proposal', '
 insert into stt_project(id, name, description, start_on, company_code, company_name, status) values (1, 'Simple Time Tracker', 'Simple presentation of a time tracker application', '2013-03-01', 'SIT', 'StaleksIT', 'OPEN');
 
 insert into stt_project_member(id, user_id, project_id) values(1, 2, 1);
+
+insert into stt_project_task(id, project_id, user_id, task_type_id, name, description, start_on, due_on, bid_hours) values(1, 1, 2, 1, 'Setup Maven project', 'Prepare Maven Multi-Module project according to specified high level architecture design', '2013-03-01', '2013-03-07', 8);
+
+
+
