@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.account;
+package rs.in.staleksit.timetracker.core.account.api.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.common.AbstractDomainModel;
 
 /**

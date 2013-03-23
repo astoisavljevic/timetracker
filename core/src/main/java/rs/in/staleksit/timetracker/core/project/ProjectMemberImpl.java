@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import rs.in.staleksit.timetracker.core.account.User;
-import rs.in.staleksit.timetracker.core.account.UserImpl;
+import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
 import rs.in.staleksit.timetracker.core.common.AbstractDomainModel;
 
 /**

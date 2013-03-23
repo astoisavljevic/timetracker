@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.account;
+package rs.in.staleksit.timetracker.core.account.api.impl;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
