@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.domain.common;
+package rs.in.staleksit.timetracker.core.domain.project;
 
 import static org.testng.Assert.*;
 
@@ -17,7 +17,7 @@ import rs.in.staleksit.timetracker.core.domain.project.ActivityTypeRepository;
  * @author a.stoisavljevic
  *
  */
-@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.domain.common.ActivityTypeRepositoryTest"})
+@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.domain.project.ActivityTypeRepositoryTest"})
 @ContextConfiguration(locations = {"classpath:/rs/in/staleksit/timetracker/core/ctx/timetracker-data-ctx.xml", 
 		"classpath:/rs/in/staleksit/timetracker/core/ctx/test-timetracker-data-ctx.xml"})
 public class ActivityTypeRepositoryTest extends AbstractTestNGSpringContextTests {

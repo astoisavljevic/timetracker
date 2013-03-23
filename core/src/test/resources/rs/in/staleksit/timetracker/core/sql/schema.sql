@@ -1,11 +1,3 @@
-create table stt_activity_type(
-	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
-	version bigint(20) not null default 0,
-	name varchar(255) not null,
-	description varchar(255) not null,
-	color varchar(255) not null,
-	status varchar(255) not null
-);
 
 create table stt_role(
 	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
@@ -25,4 +17,24 @@ create table stt_user(
 	role_id bigint(20) not null,
 	constraint fk_stt_user_role foreign key (role_id) references stt_role(id)
 );
+
+create table stt_activity_type(
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default 0,
+	name varchar(255) not null,
+	description varchar(255) not null,
+	color varchar(255) not null,
+	status varchar(255) not null
+);
+
+create table stt_task_type(
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default 0,
+	name varchar(255) not null,
+	description varchar(255) not null,
+	color varchar(255) not null,
+	status varchar(255) not null
+);
+
+
 
