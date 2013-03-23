@@ -19,5 +19,4 @@ insert into stt_project_member(id, user_id, project_id) values(1, 2, 1);
 
 insert into stt_project_task(id, project_id, user_id, task_type_id, name, description, start_on, due_on, bid_hours) values(1, 1, 2, 1, 'Setup Maven project', 'Prepare Maven Multi-Module project according to specified high level architecture design', '2013-03-01', '2013-03-07', 8);
 
-
-
+insert into stt_time_sheet(id, project_task_id, user_id, activity_type_id, started_at, hours, description) values(1, 1, 2, 2, '2013-03-02 08:30:00', 1, 'started to work on this issue');

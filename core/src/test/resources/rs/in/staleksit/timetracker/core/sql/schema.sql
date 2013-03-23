@@ -75,6 +75,22 @@ create table stt_project_task(
 	constraint fk_stt_project_task_task_type foreign key (task_type_id) references stt_task_type(id)		
 );
 
+create table stt_time_sheet(
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default 0,	
+	project_task_id bigint(20) not null,
+	user_id bigint(20) not null,
+	activity_type_id bigint(20) not null,
+	started_at datetime,
+	hours decimal,
+	description varchar(255),
+	status varchar(255),
+	constraint fk_stt_time_sheet_project_task foreign key (project_task_id) references stt_project_task(id),
+	constraint fk_stt_time_sheet_user foreign key (user_id) references stt_user(id),
+	constraint fk_stt_time_sheet_activity_type foreign key (activity_type_id) references stt_activity_type(id)		
+);
+
+
 
 
 
