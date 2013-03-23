@@ -14,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import rs.in.staleksit.timetracker.core.domain.common.AbstractDomainModel;
 
@@ -24,7 +23,7 @@ import rs.in.staleksit.timetracker.core.domain.common.AbstractDomainModel;
  */
 @Entity
 @Table(name = "stt_user")
-public class UserImpl extends AbstractDomainModel implements UserDetails {
+public class UserImpl extends AbstractDomainModel implements User {
 	private static final long serialVersionUID = -6523798643017729784L;
 	
 	@Column(name = "email", nullable = false)

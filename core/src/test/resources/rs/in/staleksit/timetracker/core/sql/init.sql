@@ -15,3 +15,4 @@ insert into stt_task_type(name, description, color, status) values('Proposal', '
 
 insert into stt_project(id, name, description, start_on, company_code, company_name, status) values (1, 'Simple Time Tracker', 'Simple presentation of a time tracker application', '2013-03-01', 'SIT', 'StaleksIT', 'OPEN');
 
+insert into stt_project_member(id, user_id, project_id) values(1, 2, 1);

@@ -48,6 +48,14 @@ create table stt_project(
 	status varchar(255)
 );
 
+create table stt_project_member(
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default 0,	
+	user_id bigint(20) not null,
+	project_id bigint(20) not null,
+	constraint fk_stt_project_member_user foreign key (user_id) references stt_user(id),
+	constraint fk_stt_project_member_project foreign key (project_id) references stt_project(id)	
+);
 
 
 
