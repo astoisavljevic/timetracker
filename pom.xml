@@ -69,6 +69,16 @@
 				<artifactId>spring-expression</artifactId>
 				<version>${org.springframework.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
 
 			<!-- ### SpringSecurity -->
 			<dependency>
@@ -269,5 +279,6 @@
 
 	<modules>
 		<module>core</module>
+		<module>site</module>
 	</modules>
 </project>

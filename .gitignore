@@ -11,3 +11,7 @@
 core/target/
 core/.classpath
 core/test-output/
+
+site/target/
+site/.classpath
+site/test-output/
