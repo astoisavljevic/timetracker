@@ -36,5 +36,18 @@ create table stt_task_type(
 	status varchar(255) not null
 );
 
+create table stt_project(
+	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
+	version bigint(20) not null default 0,	
+	name varchar(255) not null,
+	description varchar(255) not null,
+	start_on date,
+	color varchar(255),
+	company_code varchar(255) not null,
+	company_name varchar(255) not null,
+	status varchar(255)
+);
+
+
 
 

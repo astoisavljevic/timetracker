@@ -13,3 +13,5 @@ insert into stt_task_type(name, description, color, status) values('Features', '
 insert into stt_task_type(name, description, color, status) values('Maintanance', 'working on existing features', '#00FF00', 'OPEN');
 insert into stt_task_type(name, description, color, status) values('Proposal', 'sales force', '#0000FF', 'OPEN');
 
+insert into stt_project(id, name, description, start_on, company_code, company_name, status) values (1, 'Simple Time Tracker', 'Simple presentation of a time tracker application', '2013-03-01', 'SIT', 'StaleksIT', 'OPEN');
+
