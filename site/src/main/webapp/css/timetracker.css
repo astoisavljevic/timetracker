@@ -1,3 +1,10 @@
+body {
+	color: #333333;
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 20px;
+}
+
 h1 {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
     font-size: 2em;
@@ -6,4 +13,26 @@ h1 {
 p {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
     font-size: 1em;
+}
+
+.navbar-inner {
+	background-color: #D44413;
+	background-image:-moz-linear-gradient(top,#ce4213,#dd4814);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#ce4213),to(#dd4814));
+	background-image:-webkit-linear-gradient(top,#ce4213,#dd4814);
+	background-image:-o-linear-gradient(top,#ce4213,#dd4814);
+	background-image:linear-gradient(to bottom,#ce4213,#dd4814);
+	border: 1px solid #C64012;
+}
+
+
+.navbar .brand {
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: -20px;
+    padding: 10px 20px;
+    text-shadow: 0 1px 0 #CE4213;
 }
