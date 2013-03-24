@@ -3,8 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	
-    <display-name>timetracker-site</display-name>
+
+	<display-name>timetracker-site</display-name>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -29,5 +29,13 @@
 		<servlet-name>timetracker</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
 
 </web-app>
