@@ -8,5 +8,28 @@
 		http://www.springframework.org/schema/security/spring-security-3.1.xsd
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+		
+   	<http pattern="/css/**" security="none" />
+	<http pattern="/js/**" security="none" />
+	<http pattern="/img/**" security="none" />
+    
+    <http use-expressions="true">
+        <intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/account" access="isAuthenticated()" />
+        
+        <intercept-url pattern="/" access="permitAll" />
+        <intercept-url pattern="/home" access="permitAll" />
+        
+		<form-login login-page="/login" default-target-url="/account" authentication-failure-url="/?error=1" />
+		
+		<logout logout-url="/logout" logout-success-url="/" delete-cookies="JSESSIONID" />
+        
+    </http>
+    
+    <authentication-manager>
+        <authentication-provider user-service-ref="userDetailsServiceByUsername"/>
+    </authentication-manager>
+    
+    <beans:bean id="userDetailsServiceByUsername" class="rs.in.staleksit.timetracker.web.security.UserDetailsServiceByUsername" />
     
 </beans:beans>
