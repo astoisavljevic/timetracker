@@ -22,21 +22,30 @@
 	<script type="text/javascript" src="<c:url value="${scriptSrc}"/>"></script>
 </c:forEach>
 </head>
-<body>
+<body class="preview">
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
+				
+				<!-- 			
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				 -->
+			
 				<!-- Be sure to leave the brand out there if you want it shown -->
 				<a class="brand" href="#">StaleksIT</a>
 				
 				<sec:authorize access="isAuthenticated()">
-				<ul class="nav pull-right">
-					<li class="dropdown">
-						<i class="icon-user"></i>
-						Sign in
-						<span class="caret"></span>
-					</li>
-				</ul>
+					<ul class="nav pull-right">
+						<li class="dropdown">
+							<i class="icon-user"></i>
+							java-developer
+							<span class="caret"></span>
+						</li>
+					</ul>
 				</sec:authorize>
 			</div>
 		</div>
