@@ -28,6 +28,16 @@
 			<div class="container">
 				<!-- Be sure to leave the brand out there if you want it shown -->
 				<a class="brand" href="#">StaleksIT</a>
+				
+				<sec:authorize access="isAuthenticated()">
+				<ul class="nav pull-right">
+					<li class="dropdown">
+						<i class="icon-user"></i>
+						Sign in
+						<span class="caret"></span>
+					</li>
+				</ul>
+				</sec:authorize>
 			</div>
 		</div>
 	</div>
