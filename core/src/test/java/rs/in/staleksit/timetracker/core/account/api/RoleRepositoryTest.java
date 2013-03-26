@@ -10,7 +10,6 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import rs.in.staleksit.timetracker.core.account.api.RoleRepository;
 import rs.in.staleksit.timetracker.core.account.api.impl.RoleImpl;
 
 /**
@@ -39,6 +38,21 @@ public class RoleRepositoryTest extends AbstractTestNGSpringContextTests {
 		assertNotNull(result);
 		assertTrue(result.getAuthority().equals("ADMIN"));
 	}
+	
+	public void testGetVersionOfEntity() {
+		assertNotNull(repository);
+		RoleImpl result = repository.findOne(1);
+		assertNotNull(result);
+		assertEquals(result.getVersion().intValue(), 0);
+	}
+	
+	public void testToString() {
+		assertNotNull(repository);
+		RoleImpl result = repository.findOne(1);
+		assertNotNull(result);
+		assertTrue(result.toString().contains("name=ADMIN,version=0,id=1"));
+	}
+	
 
 
 }

@@ -49,18 +49,12 @@ public class UserImpl extends AbstractDomainModel implements User {
 	@JoinColumn(name = "role_id")
 	private RoleImpl role;
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#getAuthorities()
-	 */
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<RoleImpl> grantedAuthorities = new ArrayList<RoleImpl>();
 		grantedAuthorities.add(role);
 		return grantedAuthorities;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#getPassword()
-	 */
 	public String getPassword() {
 		return password;
 	}
@@ -69,9 +63,6 @@ public class UserImpl extends AbstractDomainModel implements User {
 		this.password = password;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#getUsername()
-	 */
 	public String getUsername() {
 		return username;
 	}
@@ -80,30 +71,18 @@ public class UserImpl extends AbstractDomainModel implements User {
 		this.username = username;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#isAccountNonExpired()
-	 */
 	public boolean isAccountNonExpired() {
 		return true;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#isAccountNonLocked()
-	 */
 	public boolean isAccountNonLocked() {
 		return true;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#isCredentialsNonExpired()
-	 */
 	public boolean isCredentialsNonExpired() {
 		return true;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.core.userdetails.UserDetails#isEnabled()
-	 */
 	public boolean isEnabled() {
 		return enabled;
 	}
@@ -144,9 +123,6 @@ public class UserImpl extends AbstractDomainModel implements User {
 		this.role = role;
 	}
 
-	/* (non-Javadoc)
-	 * @see rs.in.staleksit.timetracker.core.domain.common.AbstractDomainModel#getExcludedAttributes()
-	 */
 	@Override
 	protected String[] getExcludedAttributes() {
 		return new String[] {"role"};
