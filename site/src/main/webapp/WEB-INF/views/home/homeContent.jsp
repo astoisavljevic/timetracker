@@ -13,8 +13,8 @@
 	</header>
 	<div class="page-header">&nbsp;</div>
 	<section class="home-actions">
-		<a class="btn btn-primary" href="#">Log in</a>
+		<a class="btn btn-primary" href="<c:url value="/login"/>">Log in</a>
 		<div class="spacer20"></div>
-		<a class="btn btn-info" href="#">Sign In</a>
+		<a class="btn btn-info" href="<c:url value="/sign"/>">Sign In</a>
 	</section>
 </div>
