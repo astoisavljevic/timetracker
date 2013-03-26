@@ -2,19 +2,41 @@
 <%@ include file="/WEB-INF/common/taglibs.jsp" %>
 
 <div class="container">
-	<header id="overview" class="jumbotron subhead">
-		<div class="row">
-			<div class="span6">
-				<h1>Time Track</h1>
-				<p class="lead">simple time tracker application</p>
-			</div>
-			<div class="span6">&nbsp;</div>
-		</div>	
-	</header>
-	<div class="page-header">&nbsp;</div>
-	<section class="home-actions">
-		<a class="btn btn-primary" href="<c:url value="/login"/>">Log in</a>
-		<div class="spacer20"></div>
-		<a class="btn btn-info" href="<c:url value="/sign"/>">Sign In</a>
-	</section>
+	<div class="home-title">
+		<span>Timesheet for Tuesday, 26-03-2013 </span>
+	</div>
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Time</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1h30m</td>
+				<td>Bug fixing</td>
+			</tr>
+			<tr>
+				<td>30m</td>
+				<td>RP-234 Some issue</td>
+			</tr>		
+			<tr>
+				<td>1h</td>
+				<td>RP-235 Lorem ipsum</td>
+			</tr>		
+			<tr>
+				<td>2h</td>
+				<td>RP-236 dolor sit namen</td>
+			</tr>		
+			<tr>
+				<td>1h45m</td>
+				<td>RP-237 other</td>
+			</tr>		
+			<tr>
+				<td>1h15m</td>
+				<td>RP-238 other</td>
+			</tr>							
+		</tbody>
+	</table>
 </div>

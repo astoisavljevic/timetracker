@@ -93,8 +93,8 @@ body {
 .spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
 
 
-/* ### Home Page ### **/
-.home-actions a {
+/* ### Start Page ### **/
+.start-actions a {
 	width: 90%;
 }
 
@@ -149,4 +149,9 @@ body {
 		margin: 40px auto 0;
 	}
 	
+}
+
+/** Home **/
+.home-title {
+	padding-bottom: 10px;
 }

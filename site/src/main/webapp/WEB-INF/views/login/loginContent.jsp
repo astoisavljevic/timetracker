@@ -8,7 +8,7 @@
 	</div>
 	
 	<div id="login-content" class="clearfix">
-		<form action="#">
+		<form action="<c:url value="/home" />">
 			<fieldset>
 				<div class="control-group">
 					<label class="control-label" for="username">Username</label>

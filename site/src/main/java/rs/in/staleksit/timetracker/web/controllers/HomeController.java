@@ -16,8 +16,13 @@ import rs.in.staleksit.timetracker.web.router.TimeTrackerRouter;
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/start", method = RequestMethod.GET)
 	public String handle() {
+		return TimeTrackerRouter.START_VIEW;
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String handleHomeLoggedIn() {
 		return TimeTrackerRouter.HOME_VIEW;
 	}
 

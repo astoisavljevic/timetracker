@@ -18,6 +18,7 @@
         <intercept-url pattern="/account" access="isAuthenticated()" />
         
         <intercept-url pattern="/" access="permitAll" />
+        <intercept-url pattern="/start" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
         
 		<form-login login-page="/login" default-target-url="/account" authentication-failure-url="/?error=1" />
