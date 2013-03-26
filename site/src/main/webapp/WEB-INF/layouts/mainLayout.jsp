@@ -33,9 +33,19 @@
 					<sec:authorize access="isAuthenticated()">
 						<ul class="nav pull-right">
 							<li class="dropdown">
-								<i class="icon-user"></i>
-								java-developer
-								<span class="caret"></span>
+								<a class="dropdown-toggle" href="#" data-toggle="dropdown">
+									<sec:authentication property="principal.username" />
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Account</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">Log Out</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</sec:authorize>
@@ -47,6 +57,6 @@
 
 		<c:forEach items="${scriptBlocks}" var="scriptBlock">
 			<tiles:insertAttribute value="${scriptBlock}" />
-		</c:forEach>
+		</c:forEach>		
 	</body>
 </html>

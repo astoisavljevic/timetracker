@@ -8,23 +8,23 @@
 	</div>
 	
 	<div id="login-content" class="clearfix">
-		<form action="<c:url value="/home" />">
+		<form id="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
 			<fieldset>
 				<div class="control-group">
-					<label class="control-label" for="username">Username</label>
+					<label class="control-label" for="j_username">Username</label>
 					<div class="controls">
-						<input id="username" class="" type="text" placeholder="Username">
+						<input id="j_username" name="j_username" class="" type="text" placeholder="Username">
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="username">Password</label>
+					<label class="control-label" for="j_password">Password</label>
 					<div class="controls">
-						<input id="password" class="" type="text" placeholder="Password">
+						<input id="j_password" name="j_password" class="" type="text" placeholder="Password">
 					</div>
 				</div>				
 			</fieldset>
 			<div class="pull-right">
-				<button class="btn btn-info" type="submit"> Login </button>
+				<button id="btnLogin" class="btn btn-info" type="submit"> Login </button>
 			</div>
 		</form>
 	</div>

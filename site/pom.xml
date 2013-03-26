@@ -74,8 +74,10 @@
 			<artifactId>tiles-el</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-				
-
 	</dependencies>
+	
+	<build>
+	    <finalName>timetracker</finalName>
+	</build>
 
 </project>

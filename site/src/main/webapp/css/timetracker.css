@@ -33,6 +33,30 @@ body {
     text-shadow: 0 1px 0 #CE4213;
 }
 
+.navbar .nav > li > a {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    
+    color: #FFFFFF;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #CE4213;    
+}
+
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	background-color: #A5360F;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+    border-bottom-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+}
+
 .btn-primary {
 	background-color: #E86537;
     background-image:-moz-linear-gradient(top, #EF784E, #DD4814);
