@@ -128,6 +128,15 @@ body {
 	margin: 120px auto 0;
 }
 
+@media (max-width: 480px) {
+	
+	.login-container {
+		width: 100%;
+		margin: 40px auto 0;
+	}
+	
+}
+
 #login-header {
 	
 	padding: 0px 15px;
@@ -166,16 +175,45 @@ body {
 	padding: 2% 2%;
 }
 
+
+/** Home **/
+.home-title {
+	padding-bottom: 10px;
+}
+
+
+/** Account container **/
+.account-container {
+	width: 425px;
+	margin: 120px auto 0;	
+}
+
 @media (max-width: 480px) {
 	
-	.login-container {
+	.account-container {
 		width: 100%;
 		margin: 40px auto 0;
 	}
 	
 }
 
-/** Home **/
-.home-title {
-	padding-bottom: 10px;
+#account-content {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px 0px 20px;
 }
+
+#account-content input {
+	width: 96%;
+	padding: 2% 2%;
+}
+
+.form-actions-account {
+	padding: 15px 0px 0px 15px;
+	margin-bottom: 0px;
+}
+
+
+
