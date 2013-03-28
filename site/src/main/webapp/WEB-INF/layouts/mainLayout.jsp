@@ -28,7 +28,7 @@
 				<div class="container">
 				
 					<!-- Be sure to leave the brand out there if you want it shown -->
-					<a class="brand" href="#">StaleksIT</a>
+					<a class="brand" href="<c:url value="/home" />">StaleksIT</a>
 				
 					<sec:authorize access="isAuthenticated()">
 						<ul class="nav pull-right">
@@ -39,11 +39,11 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="#">Account</a>
+										<a href="<c:url value="/account" />">Account</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="#">Log Out</a>
+										<a href="<c:url value="/logout" />">Log Out</a>
 									</li>
 								</ul>
 							</li>
