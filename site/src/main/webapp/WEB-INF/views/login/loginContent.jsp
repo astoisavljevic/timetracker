@@ -19,7 +19,7 @@
 				<div class="control-group">
 					<label class="control-label" for="j_password">Password</label>
 					<div class="controls">
-						<input id="j_password" name="j_password" class="" type="text" placeholder="Password">
+						<input id="j_password" name="j_password" class="" type="password" placeholder="Password">
 					</div>
 				</div>				
 			</fieldset>
