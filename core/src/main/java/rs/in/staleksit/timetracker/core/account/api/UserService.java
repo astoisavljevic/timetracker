@@ -18,5 +18,12 @@ public interface UserService {
 	 * @return 
 	 */
 	User findByUsername(String username);
+	
+	/**
+	 * 
+	 * @param user
+	 * @return
+	 */
+	User save(User user);
 
 }

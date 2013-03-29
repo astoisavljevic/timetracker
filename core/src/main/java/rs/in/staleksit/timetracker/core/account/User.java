@@ -17,5 +17,7 @@ public interface User extends UserDetails {
 	
 	String getLastName();
 	
+	void merge(Object source, String... properties);
+	
 
 }
