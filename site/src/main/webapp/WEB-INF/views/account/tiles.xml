@@ -18,11 +18,9 @@
 		    <add-attribute type="string" value="/js/bootstrap.min.js" />
 		</put-list-attribute>
 		
-		<!-- 
 		<put-list-attribute name="scriptBlocks">
-		    <add-attribute type="template" value="/WEB-INF/views/login/loginScript.jsp"/>
+		    <add-attribute type="template" value="/WEB-INF/views/account/accountScript.jsp"/>
 		</put-list-attribute>
-		-->
 	    		
 	</definition>
 

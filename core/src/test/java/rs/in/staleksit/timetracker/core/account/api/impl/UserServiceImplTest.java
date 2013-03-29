@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import rs.in.staleksit.timetracker.core.account.User;
-import rs.in.staleksit.timetracker.core.account.api.UserRepository;
 
 /**
  * @author a.stoisavljevic

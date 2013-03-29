@@ -1,11 +1,10 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.account.api;
+package rs.in.staleksit.timetracker.core.account.api.impl;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
 
 /**
  * @author a.stoisavljevic

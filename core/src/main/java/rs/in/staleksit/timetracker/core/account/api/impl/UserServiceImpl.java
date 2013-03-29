@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import rs.in.staleksit.timetracker.core.account.User;
-import rs.in.staleksit.timetracker.core.account.api.UserRepository;
 import rs.in.staleksit.timetracker.core.account.api.UserService;
 
 /**
@@ -15,7 +14,7 @@ import rs.in.staleksit.timetracker.core.account.api.UserService;
  *
  */
 @Service("userService")
-public class UserServiceImpl implements UserService {
+class UserServiceImpl implements UserService {
 	
 	private UserRepository userRepository;
 	

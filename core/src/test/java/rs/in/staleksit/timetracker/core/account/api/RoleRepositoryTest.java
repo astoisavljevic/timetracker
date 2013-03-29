@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import rs.in.staleksit.timetracker.core.account.api.impl.RoleImpl;
+import rs.in.staleksit.timetracker.core.account.api.impl.RoleRepository;
 
 /**
  * @author a.stoisavljevic

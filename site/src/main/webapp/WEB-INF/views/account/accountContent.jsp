@@ -9,31 +9,31 @@
 				<div class="control-group">
 					<label class="control-label" for="username">Username:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">admin</span>
+						<span class="input-xlarge uneditable-input">${user.username}</span>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="email">E-mail account:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">admin@gmail.com</span>
+						<span class="input-xlarge uneditable-input">${user.email}</span>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="firstName">First name:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">Admin</span>
+						<span class="input-xlarge uneditable-input">${user.firstName}</span>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="lastName">Last name:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">Admin</span>
+						<span class="input-xlarge uneditable-input">${user.lastName}</span>
 					</div>
 				</div>
 				<div class="form-actions form-actions-account">
 					<div class="pull-right">
-						<button class="btn btn-primary" type="submit">Change</button>
-						<button class="btn" type="reset">Cancel</button>
+						<button id="btnAccountChange" class="btn btn-primary" type="submit">Change</button>
+						<button id="btnAccountCancel" class="btn" type="reset">Cancel</button>
 					</div>
 				</div>
 			</fieldset>

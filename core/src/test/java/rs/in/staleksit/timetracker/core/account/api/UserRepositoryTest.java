@@ -10,8 +10,8 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import rs.in.staleksit.timetracker.core.account.api.UserRepository;
 import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
+import rs.in.staleksit.timetracker.core.account.api.impl.UserRepository;
 
 /**
  * @author a.stoisavljevic
