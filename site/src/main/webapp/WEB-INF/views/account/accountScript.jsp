@@ -8,5 +8,10 @@
 			window.location.href = "<c:url value='/home' />";
 		});
 		
+		$("#btnAccountChange").click(function() {
+			var username = $("#btnAccountChange").attr('data-username');
+			window.location.href = "<c:url value='/account-change/" + username +"'  />";
+		});
+		
 	});
 </script>	

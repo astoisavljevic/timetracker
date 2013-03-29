@@ -4,7 +4,7 @@
 <div class="account-container">
 
 	<div id="account-content" class="clearfix">
-		<form id="accountForm" action="#">
+		<form:form id="accountEditForm" method="POST" commandName="user">
 			<fieldset>
 				<div class="control-group">
 					<label class="control-label" for="username">Username:</label>
@@ -15,29 +15,29 @@
 				<div class="control-group">
 					<label class="control-label" for="email">E-mail account:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">${user.email}</span>
+						<form:input path="email" cssClass="input-xlarge"/>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="firstName">First name:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">${user.firstName}</span>
+						<form:input path="firstName" cssClass="input-xlarge"/>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="lastName">Last name:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">${user.lastName}</span>
+						<form:input path="lastName" cssClass="input-xlarge" />
 					</div>
 				</div>
 				<div class="form-actions form-actions-account">
 					<div class="pull-right">
-						<button id="btnAccountChange" class="btn btn-primary" type="submit" data-username="${user.username}">Change</button>
-						<button id="btnAccountCancel" class="btn" type="reset">Cancel</button>
+						<button id="btnAccountChangeSave" class="btn btn-primary" type="submit">Save</button>
+						<button id="btnAccountChangeCancel" class="btn" type="reset">Cancel</button>
 					</div>
 				</div>
 			</fieldset>
-		</form>
+		</form:form>
 	</div>
 	
 	<div class="spacer20"></div>
