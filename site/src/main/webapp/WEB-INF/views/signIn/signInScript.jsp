@@ -4,6 +4,10 @@
 	// execute code on document ready
 	$(document).ready(function() {
 		
+		if ($("#usernameError").length > 0) {
+			$("#usernameControlGroup").addClass('error');
+		}
+		
 		$("#btnSignInCancel").click(function() {
 			window.location.href = "<c:url value='/start' />";
 		});

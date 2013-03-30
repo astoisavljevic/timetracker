@@ -6,7 +6,7 @@
 	<div id="account-content" class="clearfix">
 		<form:form id="signInForm" method="POST" commandName="signInUser">
 			<fieldset>
-				<div class="control-group">
+				<div id="usernameControlGroup" class="control-group">
 					<label class="control-label" for="username">Username:</label>
 					<div class="controls">
 						<form:input path="username" cssClass="input-xlarge"/>

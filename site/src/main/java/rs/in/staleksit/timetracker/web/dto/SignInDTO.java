@@ -5,6 +5,7 @@ package rs.in.staleksit.timetracker.web.dto;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -14,10 +15,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class SignInDTO extends UserDTO implements Serializable {
 	private static final long serialVersionUID = -9143532838458257935L;
 	
-	@NotEmpty(message = "{error.password.empty}")
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	@Length(max = 30, message = "{validation.fieldExceedsMaxLength}")
 	private String password;
 	
-	@NotEmpty(message = "{error.retypePassword.empty}")
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	@Length(max = 30, message = "{validation.fieldExceedsMaxLength}")
 	private String retypePassword;
 	
 	public SignInDTO() {

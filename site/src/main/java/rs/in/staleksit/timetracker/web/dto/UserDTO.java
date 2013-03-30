@@ -7,9 +7,11 @@ import java.io.Serializable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import rs.in.staleksit.timetracker.core.account.User;
+import rs.in.staleksit.timetracker.core.validation.UniqueNicknameConstraint;
 
 /**
  * @author a.stoisavljevic
@@ -18,14 +20,18 @@ import rs.in.staleksit.timetracker.core.account.User;
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1165828095458835521L;
 	
-	@NotEmpty(message = "{error.username.empty}")
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	@Length(max = 30, message = "{validation.fieldExceedsMaxLength}")
+	@UniqueNicknameConstraint
 	private String username;
 	
-	@NotEmpty(message = "{error.email.empty}")
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	private String email;
 	
+	@Length(max = 80, message = "{validation.fieldExceedsMaxLength}")
 	private String firstName;
 	
+	@Length(max = 80, message = "{validation.fieldExceedsMaxLength}")
 	private String lastName;
 	
 	public UserDTO() {

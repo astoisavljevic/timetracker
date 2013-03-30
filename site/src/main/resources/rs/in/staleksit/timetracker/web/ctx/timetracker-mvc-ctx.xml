@@ -42,10 +42,15 @@
 		p:order="1"/>
 	
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
-	    p:basename="classpath:rs/in/staleksit/timetracker/messages/messages"
+	    p:basenames-ref="messagesBasenames"
 		p:defaultEncoding="UTF-8" 
 		p:cacheSeconds="60" 
 		p:useCodeAsDefaultMessage="true"/>
+	
+	<util:list id="messagesBasenames">
+	    <value>classpath:rs/in/staleksit/timetracker/messages/validations</value>
+	    <value>classpath:rs/in/staleksit/timetracker/messages/messages</value>
+	</util:list>
 	
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" 
 		p:validationMessageSource-ref="messageSource"/>		
