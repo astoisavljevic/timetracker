@@ -4,6 +4,7 @@
 package rs.in.staleksit.timetracker.web.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,7 +68,7 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value = "/account-change/{username}", method = RequestMethod.POST)
-	public String handleChangeAccountSubmit(HttpServletRequest request, @ModelAttribute("user") UserDTO userDTO, @PathVariable("username") String username, Model model, BindingResult result) {
+	public String handleChangeAccountSubmit(HttpServletRequest request, @PathVariable("username") String username, @Valid @ModelAttribute("user") UserDTO userDTO, BindingResult result) {
 		String resultView;
 		if (result.hasErrors()) {
 			resultView = TimeTrackerRouter.ACCOUNT_CHANGE_VIEW;

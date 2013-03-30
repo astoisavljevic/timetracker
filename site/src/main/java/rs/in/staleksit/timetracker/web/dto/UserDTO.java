@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -20,12 +21,15 @@ import rs.in.staleksit.timetracker.core.validation.UniqueNicknameConstraint;
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1165828095458835521L;
 	
+	private static final String EMAIL_REG_EXP = "\\b[a-zA-Z0-9._%+-]+@[a-z0-9-]+\\.[a-z]{2,4}\\b";
+	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	@Length(max = 30, message = "{validation.fieldExceedsMaxLength}")
 	@UniqueNicknameConstraint
 	private String username;
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	@Email(regexp = EMAIL_REG_EXP, message="{validation.emailFormat}")
 	private String email;
 	
 	@Length(max = 80, message = "{validation.fieldExceedsMaxLength}")

@@ -13,13 +13,13 @@
 				<div class="control-group">
 					<label class="control-label" for="j_username">Username</label>
 					<div class="controls">
-						<input id="j_username" name="j_username" class="" type="text" placeholder="Username">
+						<input id="j_username" name="j_username" class="" type="text" placeholder="Username" autocomplete="off">
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="j_password">Password</label>
 					<div class="controls">
-						<input id="j_password" name="j_password" class="" type="password" placeholder="Password">
+						<input id="j_password" name="j_password" class="" type="password" placeholder="Password" autocomplete="off">
 					</div>
 				</div>				
 			</fieldset>

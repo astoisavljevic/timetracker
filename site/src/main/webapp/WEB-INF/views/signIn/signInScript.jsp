@@ -8,6 +8,10 @@
 			$("#usernameControlGroup").addClass('error');
 		}
 		
+		if ($("#emailError").length > 0) {
+			$("#emailControlGroup").addClass('error');
+		}
+		
 		$("#btnSignInCancel").click(function() {
 			window.location.href = "<c:url value='/start' />";
 		});

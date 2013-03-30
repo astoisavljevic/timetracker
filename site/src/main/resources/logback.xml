@@ -22,7 +22,7 @@
 	<logger name="org.springframework.beans.factory.xml" level="INFO" />	
 				
 	<root>
-		<level value="INFO" />
+		<level value="WARN" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
 	</root>

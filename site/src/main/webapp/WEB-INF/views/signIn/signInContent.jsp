@@ -9,7 +9,7 @@
 				<div id="usernameControlGroup" class="control-group">
 					<label class="control-label" for="username">Username:</label>
 					<div class="controls">
-						<form:input path="username" cssClass="input-xlarge"/>
+						<form:input path="username" cssClass="input-xlarge" autocomplete="off"/>
 						<span class="help-inline"><form:errors id="usernameError" path="username" /></span>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 						<span class="help-inline"><form:errors id="retypePasswordError" path="retypePassword" /></span>
 					</div>
 				</div>
-				<div class="control-group">
+				<div id="emailControlGroup" class="control-group">
 					<label class="control-label" for="email">E-mail account:</label>
 					<div class="controls">
 						<form:input path="email" cssClass="input-xlarge"/>
