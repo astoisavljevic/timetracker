@@ -10,7 +10,10 @@
 		
 		$("#btnAccountChange").click(function() {
 			var username = $("#btnAccountChange").attr('data-username');
-			window.location.href = "<c:url value='/account-change/" + username +"'  />";
+			alert('username: ' + username);
+			var accountChangeUrl = "<c:url value='/accountChange/" + username + "' />";
+			alert('url: ' + accountChangeUrl);
+			window.location.href = accountChangeUrl;
 		});
 		
 	});

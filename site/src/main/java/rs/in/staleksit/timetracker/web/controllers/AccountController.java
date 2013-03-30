@@ -61,13 +61,13 @@ public class AccountController {
 		return TimeTrackerRouter.ACCOUNT_VIEW;
 	}
 	
-	@RequestMapping(value = "/account-change/{username}", method = RequestMethod.GET)
+	@RequestMapping(value = "/accountChange/{username}", method = RequestMethod.GET)
 	public String handleChangeAccount(@ModelAttribute("user") UserDTO userDTO, @PathVariable("username") String username, Model model) {
 		model.addAttribute("user", new UserDTO(userService.findByUsername(username)));
 		return TimeTrackerRouter.ACCOUNT_CHANGE_VIEW;
 	}
 	
-	@RequestMapping(value = "/account-change/{username}", method = RequestMethod.POST)
+	@RequestMapping(value = "/accountChange/{username}", method = RequestMethod.POST)
 	public String handleChangeAccountSubmit(HttpServletRequest request, @PathVariable("username") String username, @Valid @ModelAttribute("user") UserDTO userDTO, BindingResult result) {
 		String resultView;
 		if (result.hasErrors()) {
