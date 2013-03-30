@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import rs.in.staleksit.timetracker.core.account.User;
+import rs.in.staleksit.timetracker.core.validation.UniqueEmailConstraint;
 import rs.in.staleksit.timetracker.core.validation.UniqueNicknameConstraint;
 
 /**
@@ -30,6 +31,7 @@ public class UserDTO implements Serializable {
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	@Email(regexp = EMAIL_REG_EXP, message="{validation.emailFormat}")
+	@UniqueEmailConstraint
 	private String email;
 	
 	@Length(max = 80, message = "{validation.fieldExceedsMaxLength}")

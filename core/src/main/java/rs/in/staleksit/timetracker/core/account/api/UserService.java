@@ -25,5 +25,13 @@ public interface UserService {
 	 * @return
 	 */
 	User save(User user);
+	
+	
+	/**
+	 * find user with given email. Email in the system must be unique
+	 * @param email
+	 * @return
+	 */
+	User findByEmail(String email);
 
 }
