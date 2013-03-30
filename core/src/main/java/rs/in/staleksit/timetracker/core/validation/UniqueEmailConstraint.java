@@ -22,6 +22,8 @@ import javax.validation.Payload;
 @Constraint(validatedBy = UniqueEmailConstraintValidator.class)
 public @interface UniqueEmailConstraint {
 	
+	boolean excludeAuthenticatedUser() default false;
+	
 	String message() default "{rs.in.staleksit.timetracker.unique.email}";
 	
 	Class<?>[] groups() default {};

@@ -6,6 +6,7 @@
 		
 		$("#btnAccountChangeCancel").click(function() {
 			window.location.href = "<c:url value='/account' />";
+			return false;
 		});
 
 	});

@@ -33,5 +33,15 @@ public interface UserService {
 	 * @return
 	 */
 	User findByEmail(String email);
-
+	
+	/**
+	 * 
+	 * @param username
+	 * @param password
+	 * @param email
+	 * @param firstName
+	 * @param lastName
+	 * @return
+	 */
+	User create(String username, String password, String email, String firstName, String lastName);
 }

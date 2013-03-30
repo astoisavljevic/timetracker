@@ -48,6 +48,31 @@ public class UserImpl extends AbstractDomainModel implements User {
 	@ManyToOne
 	@JoinColumn(name = "role_id")
 	private RoleImpl role;
+	
+	/**
+	 * default constructor
+	 */
+	public UserImpl() {
+		
+	}
+	
+	/**
+	 * 
+	 * @param username
+	 * @param password
+	 * @param email
+	 * @param firstName
+	 * @param lastName
+	 */
+	public UserImpl(String username, String password, String email, String firstName, String lastName) {
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		
+		this.enabled = true;
+	}
 
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<RoleImpl> grantedAuthorities = new ArrayList<RoleImpl>();

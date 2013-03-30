@@ -22,6 +22,8 @@ import javax.validation.Payload;
 @Constraint(validatedBy = UniqueNicknameConstraintValidator.class)
 public @interface UniqueNicknameConstraint {
 	
+	boolean excludeAuthenticatedUser() default false;
+	
 	String message() default "{rs.in.staleksit.timetracker.unique.username}";
 	
 	Class<?>[] groups() default {};

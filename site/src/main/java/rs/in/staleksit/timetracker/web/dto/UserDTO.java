@@ -26,12 +26,12 @@ public class UserDTO implements Serializable {
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	@Length(max = 30, message = "{validation.fieldExceedsMaxLength}")
-	@UniqueNicknameConstraint
+	@UniqueNicknameConstraint(excludeAuthenticatedUser = true)
 	private String username;
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	@Email(regexp = EMAIL_REG_EXP, message="{validation.emailFormat}")
-	@UniqueEmailConstraint
+	@UniqueEmailConstraint(excludeAuthenticatedUser = true)
 	private String email;
 	
 	@Length(max = 80, message = "{validation.fieldExceedsMaxLength}")

@@ -8,7 +8,9 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.context.SecurityContextHolder;
 
+import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.UserService;
 
 /**
@@ -16,6 +18,8 @@ import rs.in.staleksit.timetracker.core.account.api.UserService;
  *
  */
 public class UniqueNicknameConstraintValidator implements ConstraintValidator<UniqueNicknameConstraint, String> {
+	
+	private boolean excludeAuthenticatedUser;
 	
 	private UserService userService;
 	
@@ -26,7 +30,7 @@ public class UniqueNicknameConstraintValidator implements ConstraintValidator<Un
 
 	@Override
 	public void initialize(UniqueNicknameConstraint constraintAnnotation) {
-		//
+		this.excludeAuthenticatedUser = constraintAnnotation.excludeAuthenticatedUser();
 	}
 
 	/**
@@ -34,6 +38,16 @@ public class UniqueNicknameConstraintValidator implements ConstraintValidator<Un
 	 */
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
+		if (excludeAuthenticatedUser) {
+			if (SecurityContextHolder.getContext().getAuthentication() != null) {
+				User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+				if (user != null && user.getUsername().equals(value)) {
+					return true;
+				}
+			} else {
+				return true;
+			}
+		}
 		return userService.findByUsername(value) == null; 
 	}
 

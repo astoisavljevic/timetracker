@@ -22,14 +22,17 @@ public class UserServiceImplTest {
 	
 	private UserServiceImpl userService;
 	
+	
 	// mocks
 	@Mock
 	private UserRepository userRepository;
+	@Mock
+	private RoleRepository roleRepository;
 	
 	@BeforeClass
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
-		userService = new UserServiceImpl(userRepository);
+		userService = new UserServiceImpl(userRepository, roleRepository);
 	}
 	
 	public void testNotNull() {
@@ -49,7 +52,6 @@ public class UserServiceImplTest {
 		
 		assertNotNull(result);
 		assertEquals(result.getEmail(), "java.developer@gmail.com");
-		
 		
 	}
 

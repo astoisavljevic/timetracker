@@ -17,10 +17,13 @@ import rs.in.staleksit.timetracker.core.account.api.UserService;
 class UserServiceImpl implements UserService {
 	
 	private UserRepository userRepository;
+	private RoleRepository roleRepository;
+	
 	
 	@Autowired
-	public UserServiceImpl(UserRepository userRepository) {
+	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
 		this.userRepository = userRepository;
+		this.roleRepository = roleRepository;
 	}
 
 	public User findByUsername(String username) {
@@ -35,6 +38,14 @@ class UserServiceImpl implements UserService {
 	@Override
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email);
+	}
+
+	@Override
+	public User create(String username, String password, String email, String firstName, String lastName) {
+		UserImpl newUser = new UserImpl(username, password, email, firstName, lastName);
+		RoleImpl userRole = roleRepository.findOne(2);
+		newUser.setRole(userRole);
+		return (User)newUser;
 	}
 	
 	
