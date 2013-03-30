@@ -11,13 +11,15 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import rs.in.staleksit.timetracker.core.util.BeanPropertyUtils;
+
 /**
  * @author a.stoisavljevic
  *
  */
 @MappedSuperclass
 @SuppressWarnings("serial")
-public abstract class AbstractDomainModel extends AbstractPersistable<Integer> {
+public abstract class AbstractDomainModel extends AbstractPersistable<Integer> implements Mergable {
 	
 	@Version
 	private Integer version;
@@ -42,5 +44,10 @@ public abstract class AbstractDomainModel extends AbstractPersistable<Integer> {
 		}
 		result = ReflectionToStringBuilder.toStringExclude(this, excluded);
 		return result;
+	}
+	
+	@Override
+	public void merge(Object source, String... copyProperties) {
+		BeanPropertyUtils.copyBeanProperties(source, this, copyProperties);
 	}
 }

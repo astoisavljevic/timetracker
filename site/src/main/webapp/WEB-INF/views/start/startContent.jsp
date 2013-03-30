@@ -15,6 +15,6 @@
 	<section class="start-actions">
 		<a class="btn btn-primary" href="<c:url value="/login"/>">Log in</a>
 		<div class="spacer20"></div>
-		<a class="btn btn-info" href="<c:url value="/sign"/>">Sign In</a>
+		<a class="btn btn-info" href="<c:url value="/signIn"/>">Sign In</a>
 	</section>
 </div>

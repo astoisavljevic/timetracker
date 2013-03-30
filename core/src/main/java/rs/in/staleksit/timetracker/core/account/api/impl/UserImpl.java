@@ -13,9 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.BeanWrapper;
-import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.security.core.GrantedAuthority;
 
 import rs.in.staleksit.timetracker.core.account.User;
@@ -130,27 +127,5 @@ public class UserImpl extends AbstractDomainModel implements User {
 	protected String[] getExcludedAttributes() {
 		return new String[] {"role"};
 	}
-
-	@Override
-	public void merge(Object source, String... copyProperties) {
-		copyBeanProperties(source, this, copyProperties);		
-	}
-	
-	private void copyBeanProperties(
-		    final Object source,
-		    final Object target,
-		    final String...copyProperties){
-
-		    final BeanWrapper src = new BeanWrapperImpl(source);
-		    final BeanWrapper trg = new BeanWrapperImpl(target);
-		    
-		    if (copyProperties.length == 0) {
-		    	BeanUtils.copyProperties(source, target);
-		    } else {
-		    	for(final String propertyName : copyProperties){
-		    		trg.setPropertyValue(propertyName, src.getPropertyValue(propertyName));
-		    	}
-		    }
-	}	    
 
 }
