@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import rs.in.staleksit.timetracker.core.account.User;
 
@@ -17,8 +18,10 @@ import rs.in.staleksit.timetracker.core.account.User;
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1165828095458835521L;
 	
+	@NotEmpty(message = "{error.username.empty}")
 	private String username;
 	
+	@NotEmpty(message = "{error.email.empty}")
 	private String email;
 	
 	private String firstName;

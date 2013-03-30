@@ -3,6 +3,8 @@
  */
 package rs.in.staleksit.timetracker.web.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,14 +27,13 @@ public class SignInController {
 		model.addAttribute("signInUser", new SignInDTO());
 	}
 	
-	
 	@RequestMapping(value = "/signIn", method = RequestMethod.GET)
 	public String handle() {
 		return TimeTrackerRouter.SIGN_IN_VIEW;
 	}
 	
 	@RequestMapping(value = "/signIn", method = RequestMethod.POST)
-	public String handleSignInSubmit(@ModelAttribute("signInUser") SignInDTO signInDTO, Model model, BindingResult result) {
+	public String handleSignInSubmit(@Valid @ModelAttribute("signInUser") SignInDTO signInDTO, BindingResult result) {
 		
 		if (result.hasErrors()) {
 			return TimeTrackerRouter.SIGN_IN_VIEW;
