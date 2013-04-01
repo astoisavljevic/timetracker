@@ -52,5 +52,18 @@ public class UserRepositoryTest extends AbstractTestNGSpringContextTests {
 		UserImpl user = repository.findByUsername("linux");
 		assertNull(user);
 	}
+	
+	public void findByEmail() {
+		assertNotNull(repository);
+		UserImpl user = repository.findByEmail("java.developer@gmail.com");
+		assertNotNull(user);
+		assertEquals(user.getUsername(), "java");
+	}
+	
+	public void findByEmailNotFound() {
+		assertNotNull(repository);
+		UserImpl user = repository.findByEmail("p.petrovic@gmail.com");
+		assertNull(user);
+	}
 
 }

@@ -22,7 +22,6 @@ public class UserServiceImplTest {
 	
 	private UserServiceImpl userService;
 	
-	
 	// mocks
 	@Mock
 	private UserRepository userRepository;
@@ -54,5 +53,27 @@ public class UserServiceImplTest {
 		assertEquals(result.getEmail(), "java.developer@gmail.com");
 		
 	}
+	
+	public void findUserByEmailNotFound() {
+		when(userRepository.findByEmail("p.petrovic@gmail.com")).thenReturn(null);
+
+		User result = userService.findByEmail("p.petrovic@gmail.com");
+		assertNull(result);
+	}
+	
+	public void findUserByEmailFound() {
+		UserImpl user = new UserImpl();
+		user.setEmail("java.developer@gmail.com");
+		user.setEnabled(Boolean.TRUE);
+		user.setUsername("java");
+		
+		when(userRepository.findByEmail(user.getEmail())).thenReturn(user);
+		
+		User result = userService.findByEmail(user.getEmail());
+		assertNotNull(result);
+		assertEquals(result.getUsername(), "java");
+	}
+	
+	
 
 }
