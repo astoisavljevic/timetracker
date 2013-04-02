@@ -74,16 +74,40 @@
 			<artifactId>tiles-el</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time-jsptags</artifactId>
 		</dependency>
-				
+
 	</dependencies>
-	
+
 	<build>
-	    <finalName>timetracker</finalName>
+		<finalName>timetracker</finalName>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
+		<!-- ### Maven Tomcat Plugin: project now can be started as $ mvn tomcat7:run ### -->
+		<plugins>
+		    <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+				    <systemProperties>
+				        <JAVA_OPTS>-Xms512m -Xmx1024m -XX:MaxPermSize=256m</JAVA_OPTS>
+				        <spring.profiles.active>development</spring.profiles.active>
+				    </systemProperties>
+				</configuration>
+		    </plugin>
+		</plugins>
 	</build>
 
 </project>
