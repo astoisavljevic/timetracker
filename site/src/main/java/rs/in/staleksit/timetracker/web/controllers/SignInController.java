@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.UserService;
-import rs.in.staleksit.timetracker.web.dto.SignInDTO;
+import rs.in.staleksit.timetracker.core.dto.SignInDTO;
 import rs.in.staleksit.timetracker.web.router.TimeTrackerRouter;
 
 /**

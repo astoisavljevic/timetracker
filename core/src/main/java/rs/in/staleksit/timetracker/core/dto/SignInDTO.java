@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.web.dto;
+package rs.in.staleksit.timetracker.core.dto;
 
 import java.io.Serializable;
 
