@@ -192,6 +192,60 @@ create table stt_project_member(
 	constraint fk_stt_project_member_project foreign key (project_id) references stt_project(id)	
 ) ENGINE=InnoDB;
 
+-- everyone is eligable for Illness
+
+insert into stt_project_member(id, version, user_id, project_id) values(1, 0, 1, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(2, 0, 2, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(3, 0, 3, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(4, 0, 4, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(5, 0, 5, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(6, 0, 6, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(7, 0, 7, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(8, 0, 8, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(9, 0, 9, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(10, 0, 10, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(11, 0, 11, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(12, 0, 12, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(13, 0, 13, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(14, 0, 14, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(15, 0, 15, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(16, 0, 16, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(17, 0, 17, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(18, 0, 18, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(19, 0, 19, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(20, 0, 20, 1);
+insert into stt_project_member(id, version, user_id, project_id) values(21, 0, 21, 1);
+
+-- pick 3 users that will have Kick-Off
+insert into stt_project_member(id, version, user_id, project_id) values(22, 0, 13, 2);
+insert into stt_project_member(id, version, user_id, project_id) values(23, 0, 18, 2);
+insert into stt_project_member(id, version, user_id, project_id) values(24, 0, 20, 2);
+
+-- there are 5 real projects and 20 users, distribute them
+insert into stt_project_member(id, version, user_id, project_id) values(25, 0, 2, 3);
+insert into stt_project_member(id, version, user_id, project_id) values(26, 0, 7, 3);
+insert into stt_project_member(id, version, user_id, project_id) values(27, 0, 12, 3);
+insert into stt_project_member(id, version, user_id, project_id) values(28, 0, 17, 3);
+
+insert into stt_project_member(id, version, user_id, project_id) values(29, 0, 5, 4);
+insert into stt_project_member(id, version, user_id, project_id) values(30, 0, 10, 4);
+insert into stt_project_member(id, version, user_id, project_id) values(31, 0, 15, 4);
+insert into stt_project_member(id, version, user_id, project_id) values(32, 0, 20, 4);
+
+insert into stt_project_member(id, version, user_id, project_id) values(33, 0, 3, 5);
+insert into stt_project_member(id, version, user_id, project_id) values(34, 0, 8, 5);
+insert into stt_project_member(id, version, user_id, project_id) values(35, 0, 13, 5);
+insert into stt_project_member(id, version, user_id, project_id) values(36, 0, 18, 5);
+
+insert into stt_project_member(id, version, user_id, project_id) values(37, 0, 6, 6);
+insert into stt_project_member(id, version, user_id, project_id) values(38, 0, 11, 6);
+insert into stt_project_member(id, version, user_id, project_id) values(39, 0, 16, 6);
+insert into stt_project_member(id, version, user_id, project_id) values(40, 0, 21, 6);
+
+insert into stt_project_member(id, version, user_id, project_id) values(41, 0, 4, 7);
+insert into stt_project_member(id, version, user_id, project_id) values(42, 0, 9, 7);
+insert into stt_project_member(id, version, user_id, project_id) values(43, 0, 14, 7);
+insert into stt_project_member(id, version, user_id, project_id) values(44, 0, 19, 7);
 
 
 --
