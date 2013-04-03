@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup	xmlns="http://databene.org/benerator/0.7.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://databene.org/benerator/0.7.0 
+    	http://databene.org/benerator-0.7.0.xsd">
+    	
+    <import domains="person" />
+    
+    <generate type="stt_user" count="100" consumer="CSVEntityExporter">
+        <variable name="person" generator="PersonGenerator"/>
+        
+        <id name="id" type="int"/>
+        <attribute name="first_name" script="person.givenName" />
+        <attribute name="last_name" script="person.familyName"/>
+        <attribute name="email" script="person.email"/>
+        <attribute name="birth_date" script="person.birthDate"/>
+        
+    </generate>
+    
+</setup>

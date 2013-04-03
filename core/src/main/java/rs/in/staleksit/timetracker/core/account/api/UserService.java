@@ -44,4 +44,11 @@ public interface UserService {
 	 * @return
 	 */
 	User create(String username, String password, String email, String firstName, String lastName);
+	
+	/**
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	User findOne(Integer userId);
 }

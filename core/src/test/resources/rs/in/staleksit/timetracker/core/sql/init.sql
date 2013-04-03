@@ -7,12 +7,46 @@ insert into stt_user(email, username, password, first_name, last_name, enabled, 
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('v.saric@hotmail.com', 'v.saric', '12345', 'Velibor', 'Saric', TRUE, 2);
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('dj.vukovic@online.com', 'dj.vukovic', '12345', 'Djordje', 'Vukovic', TRUE, 2);
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('v.popov@gmail.com', 'v.popov', '12345', 'Vesna', 'Popov', TRUE, 2);
-insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('j.brkic@yahoo.com', 'j.brkic', '12345', 'Jelena', 'Brkic', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('j.brkic@yahoo.com', 'j.brkic', '12345', 'Jelena', 'Brkic', '1978-12-26', TRUE, 2);
+
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('m.markovic@hotmail.com', 'm.markovic', '12345', 'Mateja', 'Markovic', TRUE, 2);
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('o.sremac@online.com', 'o.sremac', '12345', 'Ognjen', 'Sremac', TRUE, 2);
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('p.nikolic@gmail.com', 'p.nikolic', '12345', 'Petar', 'Nikolic', TRUE, 2);
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('s.zoric@yahoo.com', 's.zoric', '12345', 'Svetlana', 'Zoric', TRUE, 2);
 insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('t.isakovic@hotmail.com', 't.isakovic', '12345', 'Tijana', 'Isakovic', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('katherine.williams@synaxana.net', 'k.williams', '12345', 'Katherine', 'Williams', '1916-11-24', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('chrisgriffin@gmail.com', 'c.griffin', '12345', 'Chris', 'Griffin', '1978-12-16', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('vreynolds@perg.it', 'v.reynolds', '12345', 'Vickie', 'Reynolds', '1933-07-27', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('richard_ward@txa.com', 'r.ward', '12345', 'Richard', 'Ward', '1980-06-01', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('terry.andrews@vtz.us', 't.andrews', '12345', 'Terry', 'Andrews', '1919-06-22', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('kennethherman@lkb.de', 'k.herman', '12345', 'Kenneth', 'Herman', '1921-03-20', TRUE, 2);
+	
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('joanna.burnett@visstghoijy.de', 'j.burnett', '12345', 'Joanna', 'Burnett', '1998-02-11', TRUE, 2);
+	
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('wsmith@tlbpjyawla.de', 'w.smith', '12345', 'Walter', 'Smith', '1934-03-23', TRUE, 2);
+	
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('matthew.waters@brian-dorsey.com', 'm.waters', '12345', 'Matthew', 'Waters', '1989-02-23', TRUE, 2);
+	
+insert into stt_user(email, username, password, first_name, last_name, birth_date, enabled, role_id) 
+	values ('carolyn_chaney@efb.com', 'c.chaney', '12345', 'Carolyn', 'Chaney', '1967-03-01', TRUE, 2);
+
 
 insert into stt_activity_type(name, description, color, status) values('Design', 'design architectual solutions, ideas, etc.', '#FF0000', 'OPEN');
 insert into stt_activity_type(name, description, color, status) values('Coding', 'actual writing code', '#00FF00', 'OPEN');

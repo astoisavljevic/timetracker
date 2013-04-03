@@ -13,6 +13,7 @@ create table stt_user(
 	password varchar(30) not null,
 	first_name varchar(80),
 	last_name varchar(80),
+	birth_date date,
 	enabled bit(1),
 	role_id bigint(20) not null,
 	constraint fk_stt_user_role foreign key (role_id) references stt_role(id)

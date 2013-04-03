@@ -61,19 +61,22 @@ public class AccountController {
 		return TimeTrackerRouter.ACCOUNT_VIEW;
 	}
 	
-	@RequestMapping(value = "/accountChange/{username}", method = RequestMethod.GET)
-	public String handleChangeAccount(@ModelAttribute("user") UserDTO userDTO, @PathVariable("username") String username, Model model) {
-		model.addAttribute("user", new UserDTO(userService.findByUsername(username)));
+	@RequestMapping(value = "/accountChange/{userId}", method = RequestMethod.GET)
+	public String handleChangeAccount(@ModelAttribute("user") UserDTO userDTO, @PathVariable("userId") Integer userId, Model model) {
+		if (log.isDebugEnabled()) {
+			log.debug("-+- pathVariable param: [userId: {}] -+-", userId);
+		}
+		model.addAttribute("user", new UserDTO(userService.findOne(userId)));
 		return TimeTrackerRouter.ACCOUNT_CHANGE_VIEW;
 	}
 	
-	@RequestMapping(value = "/accountChange/{username}", method = RequestMethod.POST)
-	public String handleChangeAccountSubmit(HttpServletRequest request, @PathVariable("username") String username, @Valid @ModelAttribute("user") UserDTO userDTO, BindingResult result) {
+	@RequestMapping(value = "/accountChange/{userId}", method = RequestMethod.POST)
+	public String handleChangeAccountSubmit(HttpServletRequest request, @PathVariable("userId") Integer userId, @Valid @ModelAttribute("user") UserDTO userDTO, BindingResult result) {
 		String resultView;
 		if (result.hasErrors()) {
 			resultView = TimeTrackerRouter.ACCOUNT_CHANGE_VIEW;
 		} else {
-			User userData = userService.findByUsername(username);
+			User userData = userService.findOne(userId);
 			userData.merge(userDTO);
 			userService.save(userData);
 			resultView =  "redirect:/" + TimeTrackerRouter.ACCOUNT_VIEW;

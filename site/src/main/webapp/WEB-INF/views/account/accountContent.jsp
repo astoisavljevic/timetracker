@@ -32,7 +32,7 @@
 				</div>
 				<div class="form-actions form-actions-account">
 					<div class="pull-right">
-						<button id="btnAccountChange" class="btn btn-primary" type="submit" data-username="${user.username}">Change</button>
+						<button id="btnAccountChange" class="btn btn-primary" type="submit" data-username="${user.id}">Change</button>
 						<button id="btnAccountCancel" class="btn" type="reset">Cancel</button>
 					</div>
 				</div>

@@ -19,7 +19,9 @@
 	</appender>
 
 	<logger name="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" level="INFO" />
-	<logger name="org.springframework.beans.factory.xml" level="INFO" />	
+	<logger name="org.springframework.beans.factory.xml" level="INFO" />
+	
+	<logger name="rs.in.staleksit.timetracker" level="DEBUG" />	
 				
 	<root>
 		<level value="WARN" />

@@ -5,6 +5,7 @@ package rs.in.staleksit.timetracker.core.account.api.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -41,6 +42,9 @@ public class UserImpl extends AbstractDomainModel implements User {
 	
 	@Column(name = "last_name")
 	private String lastName;
+	
+	@Column(name = "birth_date")
+	private Date birthDate;
 	
 	@Column(name = "enabled")
 	private Boolean enabled;
@@ -147,10 +151,21 @@ public class UserImpl extends AbstractDomainModel implements User {
 	public void setRole(RoleImpl role) {
 		this.role = role;
 	}
+	
+	@Override
+	public Date getBirthDate() {
+		return birthDate;
+	}
+	
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+	
 
 	@Override
 	protected String[] getExcludedAttributes() {
 		return new String[] {"role"};
 	}
+
 
 }

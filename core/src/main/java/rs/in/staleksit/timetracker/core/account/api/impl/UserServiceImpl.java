@@ -47,6 +47,11 @@ class UserServiceImpl implements UserService {
 		newUser.setRole(userRole);
 		return (User)newUser;
 	}
+
+	@Override
+	public User findOne(Integer userId) {
+		return userRepository.findOne(userId);
+	}
 	
 	
 

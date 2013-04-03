@@ -3,6 +3,8 @@
  */
 package rs.in.staleksit.timetracker.core.account;
 
+import java.util.Date;
+
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
@@ -16,6 +18,8 @@ public interface User extends UserDetails {
 	String getFirstName();
 	
 	String getLastName();
+	
+	Date getBirthDate();
 	
 	void merge(Object source, String... properties);
 	
