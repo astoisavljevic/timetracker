@@ -33,6 +33,7 @@ public class TimeSheetRepositoryTest extends AbstractTestNGSpringContextTests {
 		assertNotNull(repository);
 	}
 	
+	@Test(enabled = false)
 	public void testFindOne() {
 		assertNotNull(repository);
 		TimeSheetImpl result = repository.findOne(1);

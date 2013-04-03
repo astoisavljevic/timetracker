@@ -32,7 +32,8 @@ public class ProjectMemberRepositoryTest extends AbstractTestNGSpringContextTest
 	public void testNotNull() {
 		assertNotNull(repository);
 	}
-	
+
+	@Test(enabled = false)
 	public void testFindOne() {
 		ProjectMemberImpl result = repository.findOne(1);
 		assertNotNull(result);

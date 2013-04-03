@@ -37,7 +37,7 @@ public class ProjectRepositoryTest extends AbstractTestNGSpringContextTests {
 		assertNotNull(repository);
 		ProjectImpl result = repository.findOne(1);
 		assertNotNull(result);
-		assertTrue(result.getName().equals("Simple Time Tracker"));
+		assertTrue(result.getName().equals("Illness"));
 	}
 
 }
