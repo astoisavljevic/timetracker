@@ -37,7 +37,7 @@ public class TimeSheetRepositoryTest extends AbstractTestNGSpringContextTests {
 		assertNotNull(repository);
 		TimeSheetImpl result = repository.findOne(1);
 		assertNotNull(result);
-		assertEquals(result.getUser().getUsername(), "java");
+		assertEquals(result.getUser().getUsername(), "a.neric");
 	}
 
 

@@ -42,7 +42,7 @@ public class UserRepositoryTest extends AbstractTestNGSpringContextTests {
 	
 	public void findByUsernameFound() {
 		assertNotNull(repository);
-		UserImpl user = repository.findByUsername("java");
+		UserImpl user = repository.findByUsername("a.neric");
 		assertNotNull(user);
 		assertTrue(user.getId() == 2);
 	}
@@ -55,9 +55,9 @@ public class UserRepositoryTest extends AbstractTestNGSpringContextTests {
 	
 	public void findByEmail() {
 		assertNotNull(repository);
-		UserImpl user = repository.findByEmail("java.developer@gmail.com");
+		UserImpl user = repository.findByEmail("a.neric@yahoo.com");
 		assertNotNull(user);
-		assertEquals(user.getUsername(), "java");
+		assertEquals(user.getUsername(), "a.neric");
 	}
 	
 	public void findByEmailNotFound() {

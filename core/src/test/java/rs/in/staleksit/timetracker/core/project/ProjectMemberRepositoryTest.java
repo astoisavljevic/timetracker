@@ -36,7 +36,7 @@ public class ProjectMemberRepositoryTest extends AbstractTestNGSpringContextTest
 	public void testFindOne() {
 		ProjectMemberImpl result = repository.findOne(1);
 		assertNotNull(result);
-		assertEquals(result.getUser().getUsername(), "java");
+		assertEquals(result.getUser().getUsername(), "a.neric");
 	}
 		
 

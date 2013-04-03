@@ -94,9 +94,17 @@ create unique index idx_stt_user_username on stt_user(username);
 --
 
 insert into stt_user(email, username, password, enabled, role_id) values ('admin@gmail.com', 'admin', 'admin', TRUE, 1);
-insert into stt_user(email, username, password, enabled, role_id) values ('java.developer@gmail.com', 'java-developer', 'java-developer', TRUE, 2);
-insert into stt_user(email, username, password, enabled, role_id) values ('fe.developer@gmail.com', 'fe-developer', 'fe-developer', TRUE, 2);
-insert into stt_user(email, username, password, enabled, role_id) values ('tester@gmail.com', 'test', 'test', TRUE, 2);
+
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('a.neric@yahoo.com', 'a.neric', '12345', 'Adam', 'Neric', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('v.saric@hotmail.com', 'v.saric', '12345', 'Velibor', 'Saric', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('dj.vukovic@online.com', 'dj.vukovic', '12345', 'Djordje', 'Vukovic', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('v.popov@gmail.com', 'v.popov', '12345', 'Vesna', 'Popov', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('j.brkic@yahoo.com', 'j.brkic', '12345', 'Jelena', 'Brkic', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('m.markovic@hotmail.com', 'm.markovic', '12345', 'Mateja', 'Markovic', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('o.sremac@online.com', 'o.sremac', '12345', 'Ognjen', 'Sremac', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('p.nikolic@gmail.com', 'p.nikolic', '12345', 'Petar', 'Nikolic', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('s.zoric@yahoo.com', 's.zoric', '12345', 'Svetlana', 'Zoric', TRUE, 2);
+insert into stt_user(email, username, password, first_name, last_name, enabled, role_id) values ('t.isakovic@hotmail.com', 't.isakovic', '12345', 'Tijana', 'Isakovic', TRUE, 2);
 
 
 --
