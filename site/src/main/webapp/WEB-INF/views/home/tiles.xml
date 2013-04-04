@@ -8,9 +8,10 @@
 		<put-attribute name="content" type="template" value="/WEB-INF/views/home/homeContent.jsp" />
 		
 		<put-list-attribute name="styles">
-			<add-attribute type="string" value="/css/bootstrap.min.css" />
+			<add-attribute type="string" value="/css/bootstrap-united.css" />
 			<add-attribute type="string" value="/css/bootstrap-responsive.min.css" />
-			<add-attribute type="string" value="/css/timetracker.css" />
+			<add-attribute type="string" value="/css/timetracker-new.css" />
+			
 		</put-list-attribute>
 		
 		<put-list-attribute name="scripts">
