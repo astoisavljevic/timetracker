@@ -1,4 +1,17 @@
 timetracker
 ===========
 
-In order to create db use following command: mvn -N db-migration:create
+DB usage:
+
+* To create DB use following command: mvn -N db-migration:create
+
+* Prepopuate DB use following command: mvn -N db-migration:migrate
+
+
+Tomcat usage:
+
+* $ cd site
+* $ mvn tomcat7:run
+
+
+

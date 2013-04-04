@@ -24,7 +24,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
@@ -83,26 +83,53 @@
 
 		<pluginManagement>
 			<plugins>
+			    <!-- ### Maven Tomcat7 Plugin ### -->
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.1</version>
 				</plugin>
+
+				<plugin>
+					<groupId>org.lesscss</groupId>
+					<artifactId>lesscss-maven-plugin</artifactId>
+					<version>1.3.3</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
-		
-		<!-- ### Maven Tomcat Plugin: project now can be started as $ mvn tomcat7:run ### -->
+
 		<plugins>
+			<!-- ### Maven Tomcat Plugin: project now can be started as $ mvn tomcat7:run ### -->
 		    <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
-				    <systemProperties>
-				        <JAVA_OPTS>-Xms512m -Xmx1024m -XX:MaxPermSize=256m</JAVA_OPTS>
-				        <spring.profiles.active>development</spring.profiles.active>
-				    </systemProperties>
+					<systemProperties>
+						<JAVA_OPTS>-Xms512m -Xmx1024m -XX:MaxPermSize=256m</JAVA_OPTS>
+						<spring.profiles.active>development</spring.profiles.active>
+					</systemProperties>
 				</configuration>
-		    </plugin>
+			</plugin>
+			
+			<plugin>
+    			<groupId>org.lesscss</groupId>
+    			<artifactId>lesscss-maven-plugin</artifactId>
+    			<configuration>
+        			<sourceDirectory>${project.basedir}/src/main/webapp/less</sourceDirectory>
+        			<outputDirectory>${project.build.directory}/${project.build.finalName}/css</outputDirectory>
+        			<compress>true</compress>
+        			<includes>
+            			<include>main.less</include>
+        			</includes>
+    			</configuration>
+    			<executions>
+        			<execution>
+            			<goals>
+                			<goal>compile</goal>
+            			</goals>
+        			</execution>
+    			</executions>
+			</plugin>			
 		</plugins>
 	</build>
 
