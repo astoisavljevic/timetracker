@@ -51,13 +51,69 @@ create unique index idx_stt_activity_type_name on stt_activity_type(name);
 -- data import
 --
 
-insert into stt_activity_type(name, description, color, status) values('Design', 'design architectual solutions, ideas, etc.', '#FF0000', 'OPEN');
-insert into stt_activity_type(name, description, color, status) values('Coding', 'actual writing code', '#00FF00', 'OPEN');
-insert into stt_activity_type(name, description, color, status) values('Debugging', 'debugging code', '#0000FF', 'OPEN');
-insert into stt_activity_type(name, description, color, status) values('Testing', 'testing code', '#000000', 'OPEN');
-insert into stt_activity_type(name, description, color, status) values('Illness', 'sick leave', '#FFA500', 'OPEN');
+insert into stt_activity_type(name, description, color, status) 
+	values('design', 'design architectual solutions, ideas, etc.', '#FF0000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('coding', 'actual writing code', '#00FF00', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('debugging', 'debugging code', '#0000FF', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('testing', 'testing code', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('illness', 'sick leave', '#FFA500', 'OPEN');
 
+insert into stt_activity_type(name, description, color, status) 
+	values('audit', 'evaluation of code', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('billing', 'creating bill account', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('brainstorming', 'meeting to brainstorm ideas', '#000000', 'OPEN');
 
+insert into stt_activity_type(name, description, color, status) 
+	values('collaboration', 'working on same code', '#000000', 'OPEN');
+
+insert into stt_activity_type(name, description, color, status) 
+	values('consulting', 'giving help with ideas to colleague', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('database', 'modeling and administering database', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('design', 'design & modelling', '#000000', 'OPEN');
+
+insert into stt_activity_type(name, description, color, status) 
+	values('documentation', 'documenting code, architecture & design', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('emergency', 'hotfix on production', '#000000', 'OPEN');
+
+insert into stt_activity_type(name, description, color, status) 
+	values('internal', 'internal company stuff', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('market research', 'doing market research to find some informations', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('meeting', 'meeting', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('paperwork', 'some paperwork', '#000000', 'OPEN');
+	
+insert into stt_activity_type(name, description, color, status) 
+	values('phone call', 'doing phone calls', '#000000', 'OPEN');
+
+insert into stt_activity_type(name, description, color, status) 
+	values('research', 'research and development', '#000000', 'OPEN');
+
+insert into stt_activity_type(name, description, color, status) 
+	values('wireframing', 'making wireframes for solution', '#000000', 'OPEN');
+	
 create table stt_role(
 	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
 	version bigint(20) not null default '0',
