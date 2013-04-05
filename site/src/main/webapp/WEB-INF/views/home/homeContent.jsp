@@ -10,10 +10,10 @@
 	<div class="spacer5"></div>
 	<div class="row">
 		<div class="span12">
-			<form id="logHoursForm" class="" action="#">
-				<input class="input-mini" type="text" placeholder="HH:mm">
+			<form id="logHoursForm" class="well" action="#">
+				<input id="hours" class="input-mini" type="text" placeholder="HH:mm">
 				<input id="project" class="input-medium" type="text" placeholder="Project" data-provide="typeahead" data-items="4">
-				<input class="input-xlarge" type="text" placeholder="Description">
+				<input id="description" class="input-xlarge" type="text" placeholder="Description">
 				<button class="btn" type="submit">Log!</button>
 			</form>
 		</div>
@@ -22,7 +22,8 @@
 	<div class="row">
 		<div class="span12">
 			<div class="page-header">
-				<h3 id="lblYourRecentEntries">Your recent entries</h3>
+				<div id="profileImageHolder"><img src="<c:url value="/img/profiles/${currentUser.id}.png" />" /></div><h3 id="lblYourRecentEntries">Your recent entries</h3>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>	

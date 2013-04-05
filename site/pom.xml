@@ -75,6 +75,13 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time-jsptags</artifactId>
 		</dependency>
+		
+		<!-- ### Jackson ### -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+		</dependency>
+				
 
 	</dependencies>
 

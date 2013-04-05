@@ -10,8 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,6 +23,7 @@ import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.UserService;
 import rs.in.staleksit.timetracker.core.dto.UserDTO;
 import rs.in.staleksit.timetracker.web.router.TimeTrackerRouter;
+import rs.in.staleksit.timetracker.web.security.util.SecurityUtils;
 
 /**
  * @author a.stoisavljevic
@@ -53,7 +52,7 @@ public class AccountController {
 		if (username != null) {
 			user = userService.findByUsername(username);
 		} else {
-			user = userService.findByUsername(((UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername());
+			user = userService.findByUsername(SecurityUtils.getPrincipal());
 		}
 		
 		model.addAttribute("user", user);
