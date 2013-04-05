@@ -7,38 +7,23 @@
 	<div class="home-title">
 		<span>Timesheet for <joda:format value="${now}" pattern="EEEE, dd/MMM/yyyy" /> </span>
 	</div>
-	<table class="table table-bordered table-striped table-hover">
-		<thead>
-			<tr>
-				<th>Time</th>
-				<th>Name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>1h30m</td>
-				<td>Bug fixing</td>
-			</tr>
-			<tr>
-				<td>30m</td>
-				<td>RP-234 Some issue</td>
-			</tr>		
-			<tr>
-				<td>1h</td>
-				<td>RP-235 Lorem ipsum</td>
-			</tr>		
-			<tr>
-				<td>2h</td>
-				<td>RP-236 dolor sit namen</td>
-			</tr>		
-			<tr>
-				<td>1h45m</td>
-				<td>RP-237 other</td>
-			</tr>		
-			<tr>
-				<td>1h15m</td>
-				<td>RP-238 other</td>
-			</tr>							
-		</tbody>
-	</table>
+	<div class="spacer5"></div>
+	<div class="row">
+		<div class="span12">
+			<form id="logHoursForm" class="" action="#">
+				<input class="input-mini" type="text" placeholder="HH:mm">
+				<input id="project" class="input-medium" type="text" placeholder="Project" data-provide="typeahead" data-items="4">
+				<input class="input-xlarge" type="text" placeholder="Description">
+				<button class="btn" type="submit">Log!</button>
+			</form>
+		</div>
+	</div>
+	<div class="spacer5"></div>
+	<div class="row">
+		<div class="span12">
+			<div class="page-header">
+				<h3 id="lblYourRecentEntries">Your recent entries</h3>
+			</div>
+		</div>
+	</div>	
 </div>

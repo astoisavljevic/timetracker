@@ -113,3 +113,9 @@
 	padding: 15px 0px 0px 15px;
 	margin-bottom: 0px;
 }
+
+@media (min-width: 768px) {
+	#logHoursForm input {
+		margin-bottom: 0px;
+	}
+}
