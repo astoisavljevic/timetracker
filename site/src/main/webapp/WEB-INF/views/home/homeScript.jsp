@@ -6,11 +6,14 @@
 	$(document).ready(function() {
 		$("#hours").focus();
 		
-		$("#project").typeahead({
+		$("#projectName").typeahead({
 			ajax: {
 				url: "<c:url value='/project-list' />" + "?userId=" + ${currentUser.id},
 				method: 'get',
-				triggerLength: 1
+				triggerLength: 1				
+			},
+			itemSelected: function(obj, itemValue, itemName) {
+				$("#projectId").val(itemValue);
 			}
 		});
 	});

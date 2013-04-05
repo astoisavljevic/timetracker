@@ -12,6 +12,7 @@
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
         
     <context:annotation-config />
-    <context:component-scan base-package="rs.in.staleksit.timetracker.core" />
+    <context:component-scan base-package="rs.in.staleksit.timetracker.core.account" />
+    <context:component-scan base-package="rs.in.staleksit.timetracker.core.project" />
     
 </beans>

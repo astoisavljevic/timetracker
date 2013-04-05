@@ -3,6 +3,7 @@
  */
 package rs.in.staleksit.timetracker.core.project;
 
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
@@ -10,7 +11,9 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  */
 public interface ProjectMemberRepository extends
-		PagingAndSortingRepository<ProjectMemberImpl, Integer> {
+		PagingAndSortingRepository<ProjectMemberImpl, Integer>, QueryDslPredicateExecutor<ProjectMemberImpl> {
+	
+	
 	
 
 }
