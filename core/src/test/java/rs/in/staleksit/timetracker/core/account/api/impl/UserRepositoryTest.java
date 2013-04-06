@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.account.api;
+package rs.in.staleksit.timetracker.core.account.api.impl;
 
 import static org.testng.Assert.*;
 
