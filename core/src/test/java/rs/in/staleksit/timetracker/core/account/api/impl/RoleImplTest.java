@@ -30,4 +30,12 @@ public class RoleImplTest {
 		assertEquals(role.getName(), "ROLE_USER");
 	}
 	
+	public void testToString() {
+		assertNotNull(role);
+		role.setName("ROLE_USER");
+		
+		assertTrue(role.toString().contains("name=ROLE_USER"));
+		
+	}
+	
 }
