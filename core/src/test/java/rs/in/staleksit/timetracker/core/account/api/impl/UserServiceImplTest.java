@@ -103,6 +103,16 @@ public class UserServiceImplTest {
 		assertEquals(((ArrayList<? extends GrantedAuthority>)result.getAuthorities()).get(0).getAuthority(), "ROLE_USER");
 	}
 	
+	public void testFindOneNotFound() {
+		when(userRepository.findOne(1)).thenReturn(null);
+		User user = userService.findOne(1);
+		assertNull(user);
+	}
 	
-
+	public void testFindOneFound() {
+		UserImpl user = new UserImpl("test", "test", "test@test.com", "Test", "Lastname");
+		when(userRepository.findOne(1)).thenReturn(user);
+		User result = userService.findOne(1);
+		assertNotNull(result);
+	}
 }
