@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author a.stoisavljevic
@@ -15,8 +16,11 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class LogHoursDTO implements Serializable {
 	private static final long serialVersionUID = -6398225204983635273L;
 	
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	private String hours;
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	private Integer projectId;
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	private String description;
 	
 	public String getHours() {
