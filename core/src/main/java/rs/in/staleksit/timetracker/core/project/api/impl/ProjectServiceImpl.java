@@ -17,10 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
 import rs.in.staleksit.timetracker.core.project.Project;
-import rs.in.staleksit.timetracker.core.project.ProjectMemberImpl;
-import rs.in.staleksit.timetracker.core.project.ProjectMemberRepository;
-import rs.in.staleksit.timetracker.core.project.ProjectRepository;
-import rs.in.staleksit.timetracker.core.project.QProjectMemberImpl;
 import rs.in.staleksit.timetracker.core.project.api.ProjectService;
 import rs.in.staleksit.timetracker.core.util.ProjectMapper;
 

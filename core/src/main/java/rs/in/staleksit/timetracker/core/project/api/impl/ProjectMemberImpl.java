@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.project;
+package rs.in.staleksit.timetracker.core.project.api.impl;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,6 +11,8 @@ import javax.persistence.Table;
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
 import rs.in.staleksit.timetracker.core.common.AbstractDomainModel;
+import rs.in.staleksit.timetracker.core.project.Project;
+import rs.in.staleksit.timetracker.core.project.ProjectMember;
 
 /**
  * @author a.stoisavljevic

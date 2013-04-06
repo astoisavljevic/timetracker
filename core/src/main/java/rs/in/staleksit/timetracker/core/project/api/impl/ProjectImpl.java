@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.project;
+package rs.in.staleksit.timetracker.core.project.api.impl;
 
 import java.util.Date;
 
@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import rs.in.staleksit.timetracker.core.common.AbstractDomainModel;
+import rs.in.staleksit.timetracker.core.project.Project;
 
 /**
  * @author a.stoisavljevic

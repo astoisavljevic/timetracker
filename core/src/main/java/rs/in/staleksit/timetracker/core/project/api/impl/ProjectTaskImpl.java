@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.project;
+package rs.in.staleksit.timetracker.core.project.api.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,6 +15,9 @@ import javax.persistence.Table;
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
 import rs.in.staleksit.timetracker.core.common.AbstractDomainModel;
+import rs.in.staleksit.timetracker.core.project.Project;
+import rs.in.staleksit.timetracker.core.project.ProjectTask;
+import rs.in.staleksit.timetracker.core.project.TaskType;
 
 /**
  * @author a.stoisavljevic
