@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.project;
+package rs.in.staleksit.timetracker.core.project.api.impl;
 
 import static org.testng.Assert.*;
 
@@ -33,12 +33,14 @@ public class ProjectMemberRepositoryTest extends AbstractTestNGSpringContextTest
 		assertNotNull(repository);
 	}
 
-	@Test(enabled = false)
 	public void testFindOne() {
 		ProjectMemberImpl result = repository.findOne(1);
 		assertNotNull(result);
-		assertEquals(result.getUser().getUsername(), "a.neric");
+		// first project - user mapping is user admin has project Illness
+		assertEquals(result.getUser().getUsername(), "admin");
 	}
+	
+	
 		
 
 }

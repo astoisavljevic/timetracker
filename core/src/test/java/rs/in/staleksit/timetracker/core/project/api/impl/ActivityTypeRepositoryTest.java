@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.project;
+package rs.in.staleksit.timetracker.core.project.api.impl;
 
 import static org.testng.Assert.*;
 
@@ -10,36 +10,34 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import rs.in.staleksit.timetracker.core.project.api.impl.TimeSheetImpl;
-import rs.in.staleksit.timetracker.core.project.api.impl.TimeSheetRepository;
+import rs.in.staleksit.timetracker.core.project.api.impl.ActivityTypeImpl;
+import rs.in.staleksit.timetracker.core.project.api.impl.ActivityTypeRepository;
 
 /**
  * @author a.stoisavljevic
  *
  */
-@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.project.TimeSheetRepositoryTest"})
+@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.project.ActivityTypeRepositoryTest"})
 @ContextConfiguration(locations = {"classpath:/rs/in/staleksit/timetracker/core/ctx/timetracker-data-ctx.xml", 
 		"classpath:/rs/in/staleksit/timetracker/core/ctx/test-timetracker-data-ctx.xml"})
-public class TimeSheetRepositoryTest extends AbstractTestNGSpringContextTests {
+public class ActivityTypeRepositoryTest extends AbstractTestNGSpringContextTests {
 	
-	private TimeSheetRepository repository;
+	private ActivityTypeRepository repository;
 	
 	@BeforeClass
 	public void setUp() {
-		repository = applicationContext.getBean(TimeSheetRepository.class);
+		repository = applicationContext.getBean(ActivityTypeRepository.class);
 	}
 	
 	public void testNotNull() {
 		assertNotNull(repository);
 	}
 	
-	@Test(enabled = false)
 	public void testFindOne() {
 		assertNotNull(repository);
-		TimeSheetImpl result = repository.findOne(1);
+		ActivityTypeImpl result = repository.findOne(2);
 		assertNotNull(result);
-		assertEquals(result.getUser().getUsername(), "a.neric");
+		assertTrue(result.getName().equals("coding"));
 	}
-
-
+	
 }

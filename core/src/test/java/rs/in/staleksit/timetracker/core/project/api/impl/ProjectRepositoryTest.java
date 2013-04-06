@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.timetracker.core.project;
+package rs.in.staleksit.timetracker.core.project.api.impl;
 
 import static org.testng.Assert.*;
 
@@ -10,23 +10,23 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import rs.in.staleksit.timetracker.core.project.api.impl.TaskTypeImpl;
-import rs.in.staleksit.timetracker.core.project.api.impl.TaskTypeRepository;
+import rs.in.staleksit.timetracker.core.project.api.impl.ProjectImpl;
+import rs.in.staleksit.timetracker.core.project.api.impl.ProjectRepository;
 
 /**
  * @author a.stoisavljevic
  *
  */
-@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.project.TaskTypeRepositoryTest"})
+@Test(groups = {"unit", "repository", "rs.in.staleksit.timetracker.core.project.ProjectRepositoryTest"})
 @ContextConfiguration(locations = {"classpath:/rs/in/staleksit/timetracker/core/ctx/timetracker-data-ctx.xml", 
 		"classpath:/rs/in/staleksit/timetracker/core/ctx/test-timetracker-data-ctx.xml"})
-public class TaskTypeRepositoryTest extends AbstractTestNGSpringContextTests {
+public class ProjectRepositoryTest extends AbstractTestNGSpringContextTests {
 	
-	private TaskTypeRepository repository;
+	private ProjectRepository repository;
 	
 	@BeforeClass
 	public void setUp() {
-		repository = applicationContext.getBean(TaskTypeRepository.class);
+		repository = applicationContext.getBean(ProjectRepository.class);
 	}
 	
 	public void testNotNull() {
@@ -35,9 +35,9 @@ public class TaskTypeRepositoryTest extends AbstractTestNGSpringContextTests {
 	
 	public void testFindOne() {
 		assertNotNull(repository);
-		TaskTypeImpl result = repository.findOne(1);
+		ProjectImpl result = repository.findOne(1);
 		assertNotNull(result);
-		assertTrue(result.getName().equals("Features"));
+		assertTrue(result.getName().equals("Illness"));
 	}
 	
 
