@@ -6,6 +6,7 @@ package rs.in.staleksit.timetracker.core.project.api.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.criterion.LikeExpression;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,14 +48,16 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	@Transactional(value = "transactionManager", readOnly = true, propagation = Propagation.SUPPORTS)
-	public List<ProjectDTO> findAllProjectsForUser(Integer userId) {
+	public List<ProjectDTO> findAllProjectsForUser(Integer userId, String query) {
 		if (log.isDebugEnabled()) {
-			log.debug("-+- userId: {} -+-", userId);
+			log.debug("-+- userId: {}; query: {} -+-", new Object[] {userId, query});
 		}
 		QProjectMemberImpl projectMember = QProjectMemberImpl.projectMemberImpl;
+		// find all projects in projectMember mapping that are corelated to user with given id
 		BooleanExpression isEqualUser = projectMember.user.id.eq(userId);
+		BooleanExpression likeExpression = projectMember.project.name.like("%" + query + "%");
 		
-		Page<ProjectMemberImpl> projectsForUser = projectMemberRepository.findAll(isEqualUser, new PageRequest(0, 10));
+		Page<ProjectMemberImpl> projectsForUser = projectMemberRepository.findAll(isEqualUser.and(likeExpression), new PageRequest(0, 10));
 		List<Project> projects = new ArrayList<Project>();
 		
 		for (ProjectMemberImpl item: projectsForUser) {

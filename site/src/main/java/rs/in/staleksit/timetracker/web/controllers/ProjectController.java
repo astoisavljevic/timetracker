@@ -42,7 +42,7 @@ public class ProjectController {
 		if (log.isDebugEnabled()) {
 			log.debug("-+- userId: {}, query: {} -+-", new Object[] {userId, query});
 		}
-		return projectService.findAllProjectsForUser(userId);
+		return projectService.findAllProjectsForUser(userId, query);
 	}
 
 

@@ -18,6 +18,6 @@ public interface ProjectService {
 	 * @param userId
 	 * @return
 	 */
-	List<ProjectDTO> findAllProjectsForUser(Integer userId);
+	List<ProjectDTO> findAllProjectsForUser(Integer userId, String query);
 
 }
