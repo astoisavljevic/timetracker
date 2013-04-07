@@ -14,7 +14,7 @@
 				<form:input path="hours" cssClass="input-mini" placeholder="HH:mm" autocomplete="off"/>
 				<form:hidden path="projectId"/>
 				<input id="projectName" name="projectName" class="input-medium" type="text" placeholder="Project" data-provide="typeahead" data-items="4" autocomplete="off"/>
-				<form:input path="description" cssClass="input-xlarge" placeholder="Description" autocomplete="off" />
+				<form:input id="description" path="description" cssClass="input-xlarge" placeholder="Description" autocomplete="off" />
 				<button class="btn" type="submit">Log!</button>
 			</form:form>
 		</div>

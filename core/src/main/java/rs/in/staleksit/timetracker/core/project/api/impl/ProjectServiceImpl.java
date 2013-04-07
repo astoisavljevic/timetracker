@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
+import rs.in.staleksit.timetracker.core.project.ActivityType;
 import rs.in.staleksit.timetracker.core.project.Project;
 import rs.in.staleksit.timetracker.core.project.api.ProjectService;
 import rs.in.staleksit.timetracker.core.util.ProjectMapper;
@@ -37,10 +38,14 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	private ProjectMemberRepository projectMemberRepository;
 	
+	private ActivityTypeRepository activityTypeRepository;
+	
 	@Autowired
-	public ProjectServiceImpl(ProjectRepository projectRepository, ProjectMemberRepository projectMemberRepository) {
+	public ProjectServiceImpl(ProjectRepository projectRepository, ProjectMemberRepository projectMemberRepository, 
+			ActivityTypeRepository activityTypeRepository) {
 		this.projectRepository = projectRepository;
 		this.projectMemberRepository = projectMemberRepository;
+		this.activityTypeRepository = activityTypeRepository;
 	}
 
 	/**
@@ -68,6 +73,20 @@ public class ProjectServiceImpl implements ProjectService {
 		}
 		
 		return ProjectMapper.map(projects);
+	}
+
+	@Override
+	@Transactional(value = "transactionManager", readOnly = true, propagation = Propagation.SUPPORTS)
+	public List<ActivityType> findAllActivityTypes(String query) {
+		QActivityTypeImpl activityType = QActivityTypeImpl.activityTypeImpl;
+		// find activity types by name like
+		BooleanExpression likeExpression = activityType.name.like("%" + query + "%");
+		Page<ActivityTypeImpl> activityTypesResult = activityTypeRepository.findAll(likeExpression, new PageRequest(0, 10));
+		List<ActivityType> result = new ArrayList<ActivityType>();
+		for (ActivityTypeImpl item: activityTypesResult.getContent()) {
+			result.add(item);
+		}
+		return result;
 	}
 	
 }

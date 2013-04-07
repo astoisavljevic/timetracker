@@ -16,5 +16,13 @@
 				$("#projectId").val(itemValue);
 			}
 		});
+		
+		$("#description").typeahead({
+			ajax: {
+				url: "<c:url value='/activitytype-list' />",
+				method: 'get',
+				triggerLength: 1				
+			}
+		});
 	});
 </script>	
