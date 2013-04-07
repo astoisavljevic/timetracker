@@ -14,15 +14,26 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class SecurityUtils {
 	
+	/**
+	 * retrieve auth. object
+	 * @return
+	 */
 	public static Authentication getAuthentication() {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
-
+	
+	/**
+	 * retrieve username - used as principal
+	 * @return
+	 */
 	public static String getPrincipal() {
 		SecurityContext securityContext = SecurityContextHolder.getContext();
 		Authentication authentication = securityContext.getAuthentication();
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-		return userDetails.getUsername();
+		if ( authentication == null) {
+			return null;
+		} else {
+			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+			return userDetails.getUsername();
+		}
 	}
-
 }
