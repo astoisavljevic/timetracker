@@ -15,8 +15,7 @@
 		
 		<put-list-attribute name="scripts">
 			<add-attribute type="string" value="/js/jquery-1.9.1.min.js" />
-		    <add-attribute type="string" value="/js/bootstrap.min.js" />
-		    <add-attribute type="string" value="/js/bootstrap-typeahead.js" />
+		    <add-attribute type="string" value="/js/bootstrap.js" />
 		</put-list-attribute>
 	    		
 		<put-list-attribute name="scriptBlocks">

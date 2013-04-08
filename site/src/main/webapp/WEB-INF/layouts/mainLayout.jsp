@@ -41,6 +41,9 @@
 									<li>
 										<a href="<c:url value="/account" />">Account</a>
 									</li>
+									<li>
+										<a href="<c:url value="/test" />">Test</a>
+									</li>
 									<li class="divider"></li>
 									<li>
 										<a href="<c:url value="/logout" />">Log Out</a>

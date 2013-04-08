@@ -18,5 +18,7 @@ public class TimeTrackerRouter {
 	public static final String SIGN_IN_VIEW = "signIn";
 	
 	public static final String ERROR_VIEW = "error";
+	
+	public static final String TEST_VIEW = "test";
 
 }
