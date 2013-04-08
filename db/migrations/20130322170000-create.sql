@@ -156,7 +156,7 @@ insert into stt_user(id, email, username, password, enabled, role_id) values (1,
 
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (2, 'a.neric@yahoo.com', 'a.neric', '12345', 'Adam', 'Neric', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (3, 'v.saric@hotmail.com', 'v.saric', '12345', 'Velibor', 'Saric', TRUE, 2);
-insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (4, 'dj.vukovic@online.com', 'dj.vukovic', '12345', 'Djordje', 'Vukovic', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (4, 'dj.ivancevic@online.com', 'dj.ivancevic', '12345', 'Djordje', 'Ivancevic', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (5, 'v.popov@gmail.com', 'v.popov', '12345', 'Vesna', 'Popov', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
 	values (6, 'j.brkic@yahoo.com', 'j.brkic', '12345', 'Jelena', 'Brkic', '1978-12-26', TRUE, 2);

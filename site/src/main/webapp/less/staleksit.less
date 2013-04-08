@@ -1,0 +1,25 @@
+@radius: 4px;
+
+.rounded {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@gradientStartColor: #eee;
+@gradientEndColor: #fff;
+
+.gradient {
+	background-color: @gradientStartColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@gradientStartColor), to(@gradientEndColor));
+	background: -webkit-linear-gradient(top, @gradientStartColor, @gradientEndColor);
+	background: -moz-linear-gradient(top, @gradientStartColor, @gradientEndColor);
+	background: -ms-linear-gradient(top, @gradientStartColor, @gradientEndColor);
+	background: -o-linear-gradient(top, @gradientStartColor, @gradientEndColor);
+}
+
+.less-showcase1 {
+	.rounded;
+	.gradient;
+	padding: 10px;
+}

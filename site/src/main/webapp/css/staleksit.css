@@ -1,0 +1,25 @@
+.rounded {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.gradient {
+  background-color: #eeeeee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#ffffff));
+  background: -webkit-linear-gradient(top, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(top, #eeeeee, #ffffff);
+  background: -ms-linear-gradient(top, #eeeeee, #ffffff);
+  background: -o-linear-gradient(top, #eeeeee, #ffffff);
+}
+.less-showcase1 {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #eeeeee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#ffffff));
+  background: -webkit-linear-gradient(top, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(top, #eeeeee, #ffffff);
+  background: -ms-linear-gradient(top, #eeeeee, #ffffff);
+  background: -o-linear-gradient(top, #eeeeee, #ffffff);
+  padding: 10px;
+}

@@ -11,6 +11,7 @@
 			<add-attribute type="string" value="/css/bootstrap-united.min.css" />
 			<add-attribute type="string" value="/css/bootstrap-responsive.min.css" />
 			<add-attribute type="string" value="/css/timetracker.css" />
+			<add-attribute type="string" value="/css/staleksit.css" />
 		</put-list-attribute>
 		
 		<put-list-attribute name="scripts">
