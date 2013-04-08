@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
+import rs.in.staleksit.timetracker.core.dto.ProjectTaskDTO;
 import rs.in.staleksit.timetracker.core.project.ActivityType;
 import rs.in.staleksit.timetracker.core.project.Project;
 import rs.in.staleksit.timetracker.core.project.api.ProjectService;
@@ -40,12 +41,15 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	private ActivityTypeRepository activityTypeRepository;
 	
+	private ProjectTaskRepository projectTaskRepository;
+	
 	@Autowired
 	public ProjectServiceImpl(ProjectRepository projectRepository, ProjectMemberRepository projectMemberRepository, 
-			ActivityTypeRepository activityTypeRepository) {
+			ActivityTypeRepository activityTypeRepository, ProjectTaskRepository projectTaskRepository) {
 		this.projectRepository = projectRepository;
 		this.projectMemberRepository = projectMemberRepository;
 		this.activityTypeRepository = activityTypeRepository;
+		this.projectTaskRepository = projectTaskRepository;
 	}
 
 	/**
@@ -87,6 +91,28 @@ public class ProjectServiceImpl implements ProjectService {
 			result.add(item);
 		}
 		return result;
+	}
+
+	@Override
+	@Transactional(value = "transactionManager", readOnly = true, propagation = Propagation.SUPPORTS)
+	public List<ProjectDTO> findAllProjectTasks(Integer projectId,
+			String query) {
+		
+		QProjectTaskImpl projectTaskImpl = QProjectTaskImpl.projectTaskImpl;
+		// find project tasks within certain project and with given query
+		BooleanExpression isEqualProject = projectTaskImpl.project.id.eq(projectId);
+		BooleanExpression likeExpression = projectTaskImpl.name.like("%" + query + "%");
+		
+		Page<ProjectTaskImpl> projectTaskResult = projectTaskRepository.findAll(isEqualProject.and(likeExpression), new PageRequest(0, 10));
+		
+		List<ProjectDTO> projectResults = new ArrayList<ProjectDTO>();
+		
+		for (ProjectTaskImpl item: projectTaskResult.getContent()) {
+			ProjectDTO projectDTO = new ProjectDTO(item.getId(), item.getName());
+			projectResults.add(projectDTO);
+		}
+		
+		return projectResults;
 	}
 	
 }

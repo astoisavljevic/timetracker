@@ -62,7 +62,7 @@ create table stt_project_task(
 	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
 	version bigint(20) not null default 0,
 	project_id bigint(20) not null,
-	user_id bigint(20) not null,
+	user_id bigint(20),
 	task_type_id bigint(20) not null,
 	name varchar(255) not null,
 	description varchar(255) not null,

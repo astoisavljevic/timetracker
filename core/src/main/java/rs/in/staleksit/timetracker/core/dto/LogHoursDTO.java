@@ -22,6 +22,8 @@ public class LogHoursDTO implements Serializable {
 	private Integer projectId;
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	private String description;
+	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	private Integer projectTaskId;
 	
 	public String getHours() {
 		return hours;
@@ -42,6 +44,13 @@ public class LogHoursDTO implements Serializable {
 		this.description = description;
 	}
 
+	public Integer getProjectTaskId() {
+		return projectTaskId;
+	}
+	public void setProjectTaskId(Integer projectTaskId) {
+		this.projectTaskId = projectTaskId;
+	}
+	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);

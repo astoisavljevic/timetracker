@@ -21,6 +21,20 @@ public interface ProjectService {
 	 */
 	List<ProjectDTO> findAllProjectsForUser(Integer userId, String query);
 	
+	/**
+	 * 
+	 * @param query
+	 * @return
+	 */
 	List<ActivityType> findAllActivityTypes(String query);
-
+	
+	
+	/**
+	 * 
+	 * @param projectId
+	 * @param query
+	 * @return
+	 */
+	List<ProjectDTO> findAllProjectTasks(Integer projectId, String query);
+	
 }

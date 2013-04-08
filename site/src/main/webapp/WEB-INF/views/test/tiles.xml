@@ -4,14 +4,13 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-	<definition name="home" extends="main">
-		<put-attribute name="content" type="template" value="/WEB-INF/views/home/homeContent.jsp" />
+	<definition name="test" extends="main">
+		<put-attribute name="content" type="template" value="/WEB-INF/views/test/testContent.jsp" />
 		
 		<put-list-attribute name="styles">
 			<add-attribute type="string" value="/css/bootstrap-united.min.css" />
 			<add-attribute type="string" value="/css/bootstrap-responsive.min.css" />
 			<add-attribute type="string" value="/css/timetracker.css" />
-			
 		</put-list-attribute>
 		
 		<put-list-attribute name="scripts">
@@ -19,11 +18,10 @@
 		    <add-attribute type="string" value="/js/bootstrap.min.js" />
 		    <add-attribute type="string" value="/js/bootstrap-typeahead.js" />
 		</put-list-attribute>
-		
+	    		
 		<put-list-attribute name="scriptBlocks">
-		    <add-attribute type="template" value="/WEB-INF/views/home/homeScript.jsp"/>
+		    <add-attribute type="template" value="/WEB-INF/views/test/testScript.jsp"/>
 		</put-list-attribute>
-		
 	    		
 	</definition>
 

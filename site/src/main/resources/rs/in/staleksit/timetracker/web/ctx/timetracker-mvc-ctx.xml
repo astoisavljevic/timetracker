@@ -25,6 +25,7 @@
 	<mvc:resources location="/img/" mapping="/img/**" />
 	
 	<mvc:view-controller path="/start" view-name="start"/>
+	<mvc:view-controller path="/test" view-name="test"/>
     
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">

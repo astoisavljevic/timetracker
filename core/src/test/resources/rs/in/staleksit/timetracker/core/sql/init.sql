@@ -111,10 +111,10 @@ insert into stt_activity_type(name, description, color, status)
 	
 
 
-insert into stt_task_type(name, description, color, status) values('Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
-insert into stt_task_type(name, description, color, status) values('Maintanance', 'working on existing features', '#00FF00', 'OPEN');
-insert into stt_task_type(name, description, color, status) values('Proposal', 'sales force', '#0000FF', 'OPEN');
-insert into stt_task_type(name, description, color, status) values('Illness', 'Sick leave', '#FFA500', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(1, 'Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(2, 'Maintanance', 'working on existing features', '#00FF00', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(3, 'Proposal', 'sales force', '#0000FF', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(4, 'Illness', 'Sick leave', '#FFA500', 'OPEN');
 
 -- Internal projects
 insert into stt_project(id, version, name, description, start_on, company_code, company_name)
@@ -189,4 +189,23 @@ insert into stt_project_member(id, version, user_id, project_id) values(41, 0, 4
 insert into stt_project_member(id, version, user_id, project_id) values(42, 0, 9, 7);
 insert into stt_project_member(id, version, user_id, project_id) values(43, 0, 14, 7);
 insert into stt_project_member(id, version, user_id, project_id) values(44, 0, 19, 7);
+
+
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(1, 7, 1, 'SIT-101: model account package', 'design model, UML diagram of account slice', '2013-03-01', '2013-09-01', 8);
+	
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(2, 7, 1, 'SIT-102: model project package', 'design model, UML diagram of projects slice', '2013-03-01', '2013-09-01', 24);
+
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(3, 7, 1, 'SIT-103: setup Maven multi-module', 'project setup', '2013-03-01', '2013-09-01', 32);
+
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(4, 7, 1, 'SIT-104: DAO layer for account package', 'DAO layer for Role and User', '2013-03-01', '2013-09-01', 4);
+	
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(5, 7, 1, 'SIT-105: DAO layer for project package', 'DAO layer for Project, ProjectTask & TimeSheet', '2013-03-01', '2013-09-01', 8);
+	
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(6, 1, 4, 'L9: Illness', 'Illness', '1970-01-01', '2100-01-01', 0);
 	

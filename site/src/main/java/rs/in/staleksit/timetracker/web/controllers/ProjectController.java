@@ -44,6 +44,18 @@ public class ProjectController {
 		}
 		return projectService.findAllProjectsForUser(userId, query);
 	}
+	
+	@RequestMapping(value = "/projecttask-list", method = RequestMethod.GET)
+	public @ResponseBody
+	List<ProjectDTO> getListOfProjectsTasks(
+			@RequestParam(value = "projectId") Integer projectId,
+			@RequestParam("query") String query) {
+		if (log.isDebugEnabled()) {
+			log.debug("-+- projectId: {}, query: {} -+-", new Object[] {projectId, query});
+		}
+		return projectService.findAllProjectTasks(projectId, query);
+	}
+	
 
 
 }

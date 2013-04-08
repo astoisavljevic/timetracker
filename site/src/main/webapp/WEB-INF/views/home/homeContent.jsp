@@ -13,8 +13,9 @@
 			<form:form id="logHoursForm" class="well" method="POST" commandName="logHours">
 				<form:input path="hours" cssClass="input-mini" placeholder="HH:mm" autocomplete="off"/>
 				<form:hidden path="projectId"/>
-				<input id="projectName" name="projectName" class="input-medium" type="text" placeholder="Project" data-provide="typeahead" data-items="4" autocomplete="off"/>
-				<form:input id="description" path="description" cssClass="input-xlarge" placeholder="Description" autocomplete="off" />
+				<input id="projectName" name="projectName" placeholder="Project name" class="input-medium" type="text" autocomplete="off" data-provide="typeahead"/>
+				<form:hidden path="projectTaskId"/>
+				<form:input id="description" path="description" cssClass="input-xlarge" placeholder="Description" autocomplete="off" data-provide="typeahead"/>
 				<button class="btn" type="submit">Log!</button>
 			</form:form>
 		</div>

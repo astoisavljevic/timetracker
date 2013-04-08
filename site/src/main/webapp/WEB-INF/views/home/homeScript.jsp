@@ -9,20 +9,25 @@
 		$("#projectName").typeahead({
 			ajax: {
 				url: "<c:url value='/project-list' />" + "?userId=" + ${currentUser.id},
-				method: 'get',
-				triggerLength: 1				
+				method: "GET",
+				triggerLength: 1
 			},
-			itemSelected: function(obj, itemValue, itemName) {
-				$("#projectId").val(itemValue);
-			}
+			itemSelected:function(item, value, name) {
+				$("#projectId").val(value);
+			} 
 		});
 		
 		$("#description").typeahead({
 			ajax: {
-				url: "<c:url value='/activitytype-list' />",
-				method: 'get',
-				triggerLength: 1				
-			}
+				url: "<c:url value='/projecttask-list' />" + "?projectId=" + $("#projectId").val(),
+				method: "GET",
+				triggerLength: 1
+			},
+			itemSelected:function(item, value, name) {
+				$("#projectTaskId").val(value);
+			} 
 		});
+		
 	});
+	
 </script>	

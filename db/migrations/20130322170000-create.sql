@@ -26,10 +26,10 @@ create unique index idx_stt_task_type_name on stt_task_type(name);
 -- data import
 --
 
-insert into stt_task_type(name, description, color, status) values('Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
-insert into stt_task_type(name, description, color, status) values('Maintanance', 'working on existing features', '#00FF00', 'OPEN');
-insert into stt_task_type(name, description, color, status) values('Proposal', 'sales force', '#0000FF', 'OPEN');
-insert into stt_task_type(name, description, color, status) values('Illness', 'Sick leave', '#FFA500', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(1, 'Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(2, 'Maintanance', 'working on existing features', '#00FF00', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(3, 'Proposal', 'sales force', '#0000FF', 'OPEN');
+insert into stt_task_type(id, name, description, color, status) values(4, 'Illness', 'Sick leave', '#FFA500', 'OPEN');
 
 --
 -- Table structure: stt_activity_type
@@ -85,7 +85,7 @@ insert into stt_activity_type(name, description, color, status)
 	values('database', 'modeling and administering database', '#000000', 'OPEN');
 	
 insert into stt_activity_type(name, description, color, status) 
-	values('design', 'design & modelling', '#000000', 'OPEN');
+	values('design ux', 'design & modelling', '#000000', 'OPEN');
 
 insert into stt_activity_type(name, description, color, status) 
 	values('documentation', 'documenting code, architecture & design', '#000000', 'OPEN');
@@ -312,7 +312,7 @@ create table stt_project_task(
 	id bigint(20) not null AUTO_INCREMENT PRIMARY KEY,
 	version bigint(20) not null default '0',
 	project_id bigint(20) not null,
-	user_id bigint(20) not null,
+	user_id bigint(20),
 	task_type_id bigint(20) not null,
 	name varchar(255) not null,
 	description varchar(255) not null,
@@ -326,6 +326,25 @@ create table stt_project_task(
 	constraint fk_stt_project_task_task_type foreign key (task_type_id) references stt_task_type(id)		
 ) ENGINE=InnoDB;
 
+
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(1, 7, 1, 'SIT-101: model account package', 'design model, UML diagram of account slice', '2013-03-01', '2013-09-01', 8);
+	
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(2, 7, 1, 'SIT-102: model project package', 'design model, UML diagram of projects slice', '2013-03-01', '2013-09-01', 24);
+
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(3, 7, 1, 'SIT-103: setup Maven multi-module', 'project setup', '2013-03-01', '2013-09-01', 32);
+
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(4, 7, 1, 'SIT-104: DAO layer for account package', 'DAO layer for Role and User', '2013-03-01', '2013-09-01', 4);
+	
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(5, 7, 1, 'SIT-105: DAO layer for project package', 'DAO layer for Project, ProjectTask & TimeSheet', '2013-03-01', '2013-09-01', 8);
+	
+insert into stt_project_task(id, project_id, task_type_id, name, description, start_on, due_on, bid_hours)
+	values(6, 1, 4, 'L9: Illness', 'Illness', '1970-01-01', '2100-01-01', 0);
+	
 
 --
 -- Table structure: stt_time_sheet
