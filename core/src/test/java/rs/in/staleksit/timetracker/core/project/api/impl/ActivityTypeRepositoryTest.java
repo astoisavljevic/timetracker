@@ -35,7 +35,7 @@ public class ActivityTypeRepositoryTest extends AbstractTestNGSpringContextTests
 	
 	public void testFindOne() {
 		assertNotNull(repository);
-		ActivityTypeImpl result = repository.findOne(2);
+		ActivityTypeImpl result = repository.findOne(4);
 		assertNotNull(result);
 		assertTrue(result.getName().equals("coding"));
 	}

@@ -29,5 +29,7 @@ public interface TimeSheet {
 	String getDescription();
 	
 	String getStatus();
+	
+	void merge(Object source, String... properties);
 
 }

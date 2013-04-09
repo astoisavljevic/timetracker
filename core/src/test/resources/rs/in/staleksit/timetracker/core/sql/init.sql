@@ -7,109 +7,45 @@ insert into stt_user(id, email, username, password, first_name, last_name, enabl
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (3, 'v.saric@hotmail.com', 'v.saric', '12345', 'Velibor', 'Saric', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (4, 'dj.ivancevic@online.com', 'dj.ivancevic', '12345', 'Djordje', 'Ivancevic', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (5, 'v.popov@gmail.com', 'v.popov', '12345', 'Vesna', 'Popov', TRUE, 2);
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (6, 'j.brkic@yahoo.com', 'j.brkic', '12345', 'Jelena', 'Brkic', '1978-12-26', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (6, 'j.brkic@yahoo.com', 'j.brkic', '12345', 'Jelena', 'Brkic', '1978-12-26', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (7, 'm.markovic@hotmail.com', 'm.markovic', '12345', 'Mateja', 'Markovic', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (8, 'o.sremac@online.com', 'o.sremac', '12345', 'Ognjen', 'Sremac', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (9, 'p.nikolic@gmail.com', 'p.nikolic', '12345', 'Petar', 'Nikolic', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (10, 's.zoric@yahoo.com', 's.zoric', '12345', 'Svetlana', 'Zoric', TRUE, 2);
 insert into stt_user(id, email, username, password, first_name, last_name, enabled, role_id) values (11, 't.isakovic@hotmail.com', 't.isakovic', '12345', 'Tijana', 'Isakovic', TRUE, 2);
-
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (12, 'katherine.williams@synaxana.net', 'k.williams', '12345', 'Katherine', 'Williams', '1916-11-24', TRUE, 2);
-
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (13, 'chrisgriffin@gmail.com', 'c.griffin', '12345', 'Chris', 'Griffin', '1978-12-16', TRUE, 2);
-
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (14, 'vreynolds@perg.it', 'v.reynolds', '12345', 'Vickie', 'Reynolds', '1933-07-27', TRUE, 2);
-
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (15, 'richard_ward@txa.com', 'r.ward', '12345', 'Richard', 'Ward', '1980-06-01', TRUE, 2);
-
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (16, 'terry.andrews@vtz.us', 't.andrews', '12345', 'Terry', 'Andrews', '1919-06-22', TRUE, 2);
-
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (17, 'kennethherman@lkb.de', 'k.herman', '12345', 'Kenneth', 'Herman', '1921-03-20', TRUE, 2);
-	
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (18, 'joanna.burnett@visstghoijy.de', 'j.burnett', '12345', 'Joanna', 'Burnett', '1998-02-11', TRUE, 2);
-	
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (19, 'wsmith@tlbpjyawla.de', 'w.smith', '12345', 'Walter', 'Smith', '1934-03-23', TRUE, 2);
-	
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (20, 'matthew.waters@brian-dorsey.com', 'm.waters', '12345', 'Matthew', 'Waters', '1989-02-23', TRUE, 2);
-	
-insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) 
-	values (21, 'carolyn_chaney@efb.com', 'c.chaney', '12345', 'Carolyn', 'Chaney', '1967-03-01', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (12, 'katherine.williams@synaxana.net', 'k.williams', '12345', 'Katherine', 'Williams', '1916-11-24', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (13, 'chrisgriffin@gmail.com', 'c.griffin', '12345', 'Chris', 'Griffin', '1978-12-16', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (14, 'vreynolds@perg.it', 'v.reynolds', '12345', 'Vickie', 'Reynolds', '1933-07-27', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (15, 'richard_ward@txa.com', 'r.ward', '12345', 'Richard', 'Ward', '1980-06-01', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (16, 'terry.andrews@vtz.us', 't.andrews', '12345', 'Terry', 'Andrews', '1919-06-22', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (17, 'kennethherman@lkb.de', 'k.herman', '12345', 'Kenneth', 'Herman', '1921-03-20', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (18, 'joanna.burnett@visstghoijy.de', 'j.burnett', '12345', 'Joanna', 'Burnett', '1998-02-11', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (19, 'wsmith@tlbpjyawla.de', 'w.smith', '12345', 'Walter', 'Smith', '1934-03-23', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (20, 'matthew.waters@brian-dorsey.com', 'm.waters', '12345', 'Matthew', 'Waters', '1989-02-23', TRUE, 2);
+insert into stt_user(id, email, username, password, first_name, last_name, birth_date, enabled, role_id) values (21, 'carolyn_chaney@efb.com', 'c.chaney', '12345', 'Carolyn', 'Chaney', '1967-03-01', TRUE, 2);
 
 
-insert into stt_activity_type(name, description, color, status) 
-	values('design', 'design architectual solutions, ideas, etc.', '#FF0000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('coding', 'actual writing code', '#00FF00', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('debugging', 'debugging code', '#0000FF', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('testing', 'testing code', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('illness', 'sick leave', '#FFA500', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('audit', 'evaluation of code', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('billing', 'creating bill account', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('brainstorming', 'meeting to brainstorm ideas', '#000000', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('collaboration', 'working on same code', '#000000', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('consulting', 'giving help with ideas to colleague', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('database', 'modeling and administering database', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('design', 'design & modelling', '#000000', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('documentation', 'documenting code, architecture & design', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('emergency', 'hotfix on production', '#000000', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('internal', 'internal company stuff', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('market research', 'doing market research to find some informations', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('meeting', 'meeting', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('paperwork', 'some paperwork', '#000000', 'OPEN');
-	
-insert into stt_activity_type(name, description, color, status) 
-	values('phone call', 'doing phone calls', '#000000', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('research', 'research and development', '#000000', 'OPEN');
-
-insert into stt_activity_type(name, description, color, status) 
-	values('wireframing', 'making wireframes for solution', '#000000', 'OPEN');
-	
-
+insert into stt_activity_type(id, name, description, color, status) values(1, 'audit', 'evaluation of code', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(2, 'billing', 'creating bill account', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(3, 'brainstorming', 'meeting to brainstorm ideas', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(4, 'coding', 'actual writing code', '#00FF00', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(5, 'collaboration', 'working on same code', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(6, 'consulting', 'giving help with ideas to colleague', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(7, 'database', 'modeling and administering database', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(8, 'debugging', 'debugging code', '#0000FF', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(9, 'design', 'design architectual solutions, ideas, etc.', '#FF0000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(10, 'design ux', 'design & modelling', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(11, 'documentation', 'documenting code, architecture & design', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(12, 'emergency', 'hotfix on production', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(13, 'illness', 'sick leave', '#FFA500', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(14, 'internal', 'internal company stuff', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(15, 'market research', 'doing market research to find some informations', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(16, 'meeting', 'meeting', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(17, 'paperwork', 'some paperwork', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(18, 'phone call', 'doing phone calls', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(19, 'research', 'research and development', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(20, 'testing', 'testing code', '#000000', 'OPEN');
+insert into stt_activity_type(id, name, description, color, status) values(21, 'wireframing', 'making wireframes for solution', '#000000', 'OPEN');
 
 insert into stt_task_type(id, name, description, color, status) values(1, 'Features', 'working on new features, improvements, etc.', '#FF0000', 'OPEN');
 insert into stt_task_type(id, name, description, color, status) values(2, 'Maintanance', 'working on existing features', '#00FF00', 'OPEN');

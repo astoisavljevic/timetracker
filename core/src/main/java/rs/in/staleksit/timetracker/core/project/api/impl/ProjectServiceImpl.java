@@ -3,10 +3,11 @@
  */
 package rs.in.staleksit.timetracker.core.project.api.impl;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import org.hibernate.criterion.LikeExpression;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import rs.in.staleksit.timetracker.core.account.User;
+import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
-import rs.in.staleksit.timetracker.core.dto.ProjectTaskDTO;
 import rs.in.staleksit.timetracker.core.project.ActivityType;
 import rs.in.staleksit.timetracker.core.project.Project;
+import rs.in.staleksit.timetracker.core.project.TimeSheet;
 import rs.in.staleksit.timetracker.core.project.api.ProjectService;
 import rs.in.staleksit.timetracker.core.util.ProjectMapper;
 
@@ -34,22 +37,21 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	private static final Logger log = LoggerFactory.getLogger(ProjectServiceImpl.class);
 	
-	@SuppressWarnings("unused")
-	private ProjectRepository projectRepository;
-	
 	private ProjectMemberRepository projectMemberRepository;
 	
 	private ActivityTypeRepository activityTypeRepository;
 	
 	private ProjectTaskRepository projectTaskRepository;
 	
+	private TimeSheetRepository timeSheetRepository;
+	
 	@Autowired
-	public ProjectServiceImpl(ProjectRepository projectRepository, ProjectMemberRepository projectMemberRepository, 
-			ActivityTypeRepository activityTypeRepository, ProjectTaskRepository projectTaskRepository) {
-		this.projectRepository = projectRepository;
+	public ProjectServiceImpl(ProjectMemberRepository projectMemberRepository, 
+			ActivityTypeRepository activityTypeRepository, ProjectTaskRepository projectTaskRepository, TimeSheetRepository timeSheetRepository) {
 		this.projectMemberRepository = projectMemberRepository;
 		this.activityTypeRepository = activityTypeRepository;
 		this.projectTaskRepository = projectTaskRepository;
+		this.timeSheetRepository = timeSheetRepository;
 	}
 
 	/**
@@ -62,7 +64,7 @@ public class ProjectServiceImpl implements ProjectService {
 			log.debug("-+- userId: {}; query: {} -+-", new Object[] {userId, query});
 		}
 		QProjectMemberImpl projectMember = QProjectMemberImpl.projectMemberImpl;
-		// find all projects in projectMember mapping that are corelated to user with given id
+		// find all projects in projectMember mapping that are correlated to user with given id
 		BooleanExpression isEqualUser = projectMember.user.id.eq(userId);
 		BooleanExpression likeExpression = projectMember.project.name.like("%" + query + "%");
 		
@@ -113,6 +115,22 @@ public class ProjectServiceImpl implements ProjectService {
 		}
 		
 		return projectResults;
+	}
+
+	@Override
+	@Transactional(value = "transactionManager", readOnly = true, propagation = Propagation.SUPPORTS)
+	public TimeSheet create(Integer projectTaskId, User user, Date startedAt, BigDecimal hours, String description) {
+		ProjectTaskImpl projectTask = projectTaskRepository.findOne(projectTaskId);
+		// for now use "Coding" - later see how we will pass activity type
+		ActivityTypeImpl activityType = activityTypeRepository.findOne(4);
+		TimeSheet result = new TimeSheetImpl(projectTask, (UserImpl)user, activityType, startedAt, hours, description);
+		return result;
+	}
+
+	@Override
+	@Transactional(value = "transactionManager")
+	public TimeSheet saveTimeSheet(TimeSheet timeSheet) {
+		return timeSheetRepository.save((TimeSheetImpl)timeSheet);
 	}
 	
 }

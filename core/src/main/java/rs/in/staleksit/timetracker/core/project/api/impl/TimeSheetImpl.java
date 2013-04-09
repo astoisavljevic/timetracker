@@ -51,6 +51,29 @@ public class TimeSheetImpl extends AbstractDomainModel implements TimeSheet {
 
 	@Column(name = "status")
 	private String status;
+	
+	/**
+	 * default constrcutor
+	 */
+	public TimeSheetImpl() {
+		
+	}
+	
+	/**
+	 * 
+	 * @param projectTask
+	 * @param user
+	 * @param hours
+	 * @param description
+	 */
+	public TimeSheetImpl(ProjectTaskImpl projectTask, UserImpl user, ActivityTypeImpl activityType, Date startedAt, BigDecimal hours, String description) {
+		this.projectTask = projectTask;
+		this.user = user;
+		this.activityType = activityType;
+		this.startedAt = startedAt;
+		this.hours = hours;
+		this.description = description;
+	}
 
 	public ProjectTask getProjectTask() {
 		return (ProjectTask) projectTask;
