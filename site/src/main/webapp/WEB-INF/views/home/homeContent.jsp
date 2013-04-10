@@ -37,6 +37,26 @@
 				<div id="profileImageHolder"><img src="<c:url value="/img/profiles/${currentUser.id}.png" />" /></div><h3 id="lblYourRecentEntries">Your recent entries</h3>
 				<div class="clearfix"></div>
 			</div>
+			<c:if test="${fn:length(loggedHours) gt 0}">
+				<table class="table table-bordered table-striped table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Hours</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="logHoursRecord" items="${loggedHours}" varStatus="theCount">
+							<tr>
+								<td>${theCount.index+1}</td>
+								<td>${logHoursRecord.hours}</td>
+								<td>${logHoursRecord.description}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:if>
 		</div>
 	</div>	
 </div>

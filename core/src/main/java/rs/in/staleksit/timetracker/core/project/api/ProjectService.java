@@ -54,4 +54,10 @@ public interface ProjectService {
 	 */
 	TimeSheet saveTimeSheet(TimeSheet timeSheet);
 	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	List<TimeSheet> findRecentLoggedHoursForUser(User user);
 }

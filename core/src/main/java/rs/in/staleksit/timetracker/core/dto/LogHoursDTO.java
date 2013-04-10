@@ -6,6 +6,7 @@ package rs.in.staleksit.timetracker.core.dto;
 import java.io.Serializable;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -19,6 +20,7 @@ public class LogHoursDTO implements Serializable {
 	private static final long serialVersionUID = -6398225204983635273L;
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	@Pattern(regexp = "\\b[ 0-9]{1,2}:[0-9]{2}\\b", message = "{validation.logHours.notOk}")
 	private String hours;
 	@NotNull(message = "{validation.fieldMustNotBeEmpty}")
 	private Integer projectId;

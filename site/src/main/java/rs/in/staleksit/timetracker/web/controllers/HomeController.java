@@ -8,6 +8,7 @@ import java.util.Date;
 
 import javax.validation.Valid;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.UserService;
 import rs.in.staleksit.timetracker.core.dto.LogHoursDTO;
 import rs.in.staleksit.timetracker.core.project.TimeSheet;
@@ -46,7 +48,9 @@ public class HomeController {
 	
 	@ModelAttribute("logHours")
 	public void setUp(Model model) {
-		model.addAttribute("currentUser", userService.findByUsername(SecurityUtils.getPrincipal()));
+		User currentUser = userService.findByUsername(SecurityUtils.getPrincipal());
+		model.addAttribute("currentUser", currentUser);
+		model.addAttribute("loggedHours", projectService.findRecentLoggedHoursForUser(currentUser));
 	}
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
@@ -62,9 +66,27 @@ public class HomeController {
 		if (result.hasErrors()) {
 			return TimeTrackerRouter.HOME_VIEW;
 		} else {
-			TimeSheet timeSheet = projectService.create(logHoursDTO.getProjectTaskId(), userService.findByUsername(SecurityUtils.getPrincipal()), new Date(), new BigDecimal(logHoursDTO.getHours()), logHoursDTO.getDescription());
+			TimeSheet timeSheet = projectService.create(logHoursDTO.getProjectTaskId(), userService.findByUsername(SecurityUtils.getPrincipal()), new Date(), calculateHoursAndMinutes(logHoursDTO.getHours()), logHoursDTO.getDescription());
 			projectService.saveTimeSheet(timeSheet);
 			return "redirect:/" + TimeTrackerRouter.HOME_VIEW;
+		}
+	}
+	
+	/**
+	 * transforms logged hours in human readable form e.g. 6:15 to number of minutes
+	 * @param logHours
+	 * @return
+	 */
+	private BigDecimal calculateHoursAndMinutes(String logHours) {
+		if (StringUtils.isBlank(logHours)) {
+			return new BigDecimal(0);
+		} else {
+			String[] tmp = logHours.split(":");
+			Integer hours = Integer.valueOf(tmp[0]);
+			Integer minutes = Integer.valueOf(tmp[1]);
+			
+			Integer total = hours * 60 + minutes;
+			return new BigDecimal(total);
 		}
 	}
 	

@@ -132,5 +132,19 @@ public class ProjectServiceImpl implements ProjectService {
 	public TimeSheet saveTimeSheet(TimeSheet timeSheet) {
 		return timeSheetRepository.save((TimeSheetImpl)timeSheet);
 	}
+
+	@Override
+	@Transactional(value = "transactionManager", readOnly = true, propagation = Propagation.SUPPORTS)
+	public List<TimeSheet> findRecentLoggedHoursForUser(User user) {
+		QTimeSheetImpl timeSheet = QTimeSheetImpl.timeSheetImpl;
+		// find timesheet records that belongs to this user
+		BooleanExpression isEqualUser = timeSheet.user.username.eq(user.getUsername());
+		Page<TimeSheetImpl> timeSheetResults = timeSheetRepository.findAll(isEqualUser, new PageRequest(0, 10));
+		List<TimeSheet> result = new ArrayList<TimeSheet>();
+		for (TimeSheetImpl item: timeSheetResults) {
+			result.add(item);
+		}
+		return result;
+	}
 	
 }
