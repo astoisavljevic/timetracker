@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +36,8 @@ public class AccountController {
 	
 	private static final Logger log = LoggerFactory.getLogger(AccountController.class);
 	
+	private static final String[] ACCOUNT_DISSALOWED_FIELDS = {"id"};
+	
 	private UserService userService;
 	
 	@Autowired
@@ -41,8 +45,13 @@ public class AccountController {
 		this.userService = userService;
 	}
 	
+	@InitBinder
+	public void defaultInitBinder(WebDataBinder binder) {
+		binder.setDisallowedFields(ACCOUNT_DISSALOWED_FIELDS);
+	}
+	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
-	public String handle(@RequestParam(value = "username", required = false) String username, Model model) {
+	public String handle(@RequestParam(value = "username", required = false) String username, Model model) {		
 		
 		if (log.isDebugEnabled()) {
 			log.debug("-+- req. params [ username: {} ] -+-", username);
@@ -65,6 +74,8 @@ public class AccountController {
 		if (log.isDebugEnabled()) {
 			log.debug("-+- pathVariable param: [userId: {}] -+-", userId);
 		}
+		User currentUser = userService.findOne(userId);
+		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("user", new UserDTO(userService.findOne(userId)));
 		return TimeTrackerRouter.ACCOUNT_CHANGE_VIEW;
 	}

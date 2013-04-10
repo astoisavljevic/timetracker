@@ -9,7 +9,7 @@
 				<div class="control-group">
 					<label class="control-label" for="username">Username:</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">${user.username}</span>
+						<span class="input-xlarge uneditable-input">${currentUser.username}</span>
 					</div>
 				</div>
 				<div class="control-group">

@@ -13,7 +13,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.validation.UniqueEmailConstraint;
-import rs.in.staleksit.timetracker.core.validation.UniqueNicknameConstraint;
 
 /**
  * @author a.stoisavljevic
@@ -23,11 +22,6 @@ public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1165828095458835521L;
 	
 	private static final String EMAIL_REG_EXP = "\\b[a-zA-Z0-9._%+-]+@[a-z0-9-]+\\.[a-z]{2,4}\\b";
-	
-	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
-	@Length(max = 30, message = "{validation.fieldExceedsMaxLength}")
-	@UniqueNicknameConstraint(excludeAuthenticatedUser = true)
-	private String username;
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	@Email(regexp = EMAIL_REG_EXP, message="{validation.emailFormat}")
@@ -45,7 +39,6 @@ public class UserDTO implements Serializable {
 	}
 	
 	public UserDTO(User user) {
-		this.username = user.getUsername();
 		this.email = user.getEmail();
 		this.firstName = user.getFirstName();
 		this.lastName = user.getLastName();
@@ -75,15 +68,6 @@ public class UserDTO implements Serializable {
 		this.lastName = lastName;
 	}
 	
-	public String getUsername() {
-		return username;
-	}
-	
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
-
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);

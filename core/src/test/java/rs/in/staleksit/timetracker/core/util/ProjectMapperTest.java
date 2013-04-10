@@ -5,8 +5,6 @@ import static org.testng.Assert.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
@@ -14,9 +12,6 @@ import rs.in.staleksit.timetracker.core.project.api.impl.ProjectImpl;
 
 @Test(groups = {"unit", "core", "rs.in.staleksit.timetracker.core.util.ProjectMapperTest"})
 public class ProjectMapperTest {
-	
-	private static final Logger log = LoggerFactory.getLogger(ProjectMapperTest.class);
-	
 	
 	private static final String LOG_HOURS_REGEX_PATTERN = "\\b[ 0-9]{1,2}:[0-9]{2}\\b";
 	

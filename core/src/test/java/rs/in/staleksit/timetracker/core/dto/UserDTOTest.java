@@ -37,16 +37,6 @@ public class UserDTOTest {
 		assertNotNull(userDTO);
 	}
 	
-	public void testUsername() {
-		userDTO = new UserDTO();
-		userDTO.setUsername("username");
-		
-		assertNotNull(userDTO);
-		
-		assertEquals(userDTO.getUsername(), "username");
-	}
-	
-	
 	public void testEmail() {
 		userDTO = new UserDTO();
 		userDTO.setEmail("test@test.com");
