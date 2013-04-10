@@ -11,7 +11,7 @@
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<File>timetracker-site.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>evidencija-fe.%d{yyyy-MM-dd}.log</FileNamePattern>
+			<FileNamePattern>timetracker-site.%d{yyyy-MM-dd}.log</FileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}:%line - %msg%n</pattern>
