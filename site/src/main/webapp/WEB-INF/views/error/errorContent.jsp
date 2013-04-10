@@ -6,39 +6,39 @@
 		<div class="span6">
 			<c:choose>
 				<c:when test="${statusCode == 403}">
-					<h1 class="error-code color-red">Error 403</h1>
+					<h1 class="error-code color-red"><fmt:message key="error.lblError" /> 403</h1>
 					<p class="error-description muted">
-						The request was a legal request, but the server is refusing to respond to it
+						<fmt:message key="error.lblError403" />
 					</p>
 				</c:when>
 				<c:when test="${statusCode == 404}">
-					<h1 class="error-code color-red">Error 404</h1>
+					<h1 class="error-code color-red"><fmt:message key="error.lblError" /> 404</h1>
 					<p class="error-description muted">
-						Oops! The requested page could not be found
+						<fmt:message key="error.lblError404" />
 					</p>
 				</c:when>
 				<c:when test="${statusCode == 405}">
-					<h1 class="error-code color-red">Error 405</h1>
+					<h1 class="error-code color-red"><fmt:message key="error.lblError" /> 405</h1>
 					<p class="error-description muted">
-						A request was made of a page using a request method not supported by that page
+						<fmt:message key="error.lblError405" />
 					</p>
 				</c:when>
 				<c:when test="${statusCode == 500}">
-					<h1 class="error-code color-red">Error 500</h1>
+					<h1 class="error-code color-red"><fmt:message key="error.lblError" /> 500</h1>
 					<p class="error-description muted">
-						A generic error message, given when no more specific message is suitable
+						<fmt:message key="error.lblError500" />
 					</p>
 				</c:when>				
 				<c:when test="${statusCode == 503}">
-					<h1 class="error-code color-red">Error 503</h1>
+					<h1 class="error-code color-red"><fmt:message key="error.lblError" /> 503</h1>
 					<p class="error-description muted">
-						The server is currently unavailable (overloaded or down)
+						<fmt:message key="error.lblError503" />
 					</p>
 				</c:when>
 				<c:otherwise>
-					<h1 class="error-code color-red">Error 500</h1>
+					<h1 class="error-code color-red"><fmt:message key="error.lblError" /> 500</h1>
 					<p class="error-description muted">
-						A generic error message, given when no more specific message is suitable
+						<fmt:message key="error.lblErrorGeneric" />
 					</p>
 				</c:otherwise>								
 			</c:choose>

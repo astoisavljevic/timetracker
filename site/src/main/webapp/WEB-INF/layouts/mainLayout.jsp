@@ -11,9 +11,6 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>StaleksIT - Simple Time Tracker</title>
-		<!-- 
-		<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
- 		-->
 		<c:forEach items="${styles}" var="styleHref">
 			<link rel="stylesheet" type="text/css" href="<c:url value="${styleHref}"/>" />
 		</c:forEach>
@@ -28,7 +25,7 @@
 				<div class="container">
 				
 					<!-- Be sure to leave the brand out there if you want it shown -->
-					<a class="brand" href="<c:url value="/home" />">StaleksIT</a>
+					<a class="brand" href="<c:url value="/home" />"><fmt:message key="application.brand" /></a>
 				
 					<sec:authorize access="isAuthenticated()">
 						<ul class="nav pull-right">
@@ -39,14 +36,14 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="<c:url value="/account" />">Account</a>
+										<a href="<c:url value="/account" />"><fmt:message key="mainMenu.account" /></a>
 									</li>
 									<li>
-										<a href="<c:url value="/test" />">Test</a>
+										<a href="<c:url value="/test" />"><fmt:message key="mainMenu.test" /></a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="<c:url value="/logout" />">Log Out</a>
+										<a href="<c:url value="/logout" />"><fmt:message key="mainMenu.logOut" /></a>
 									</li>
 								</ul>
 							</li>

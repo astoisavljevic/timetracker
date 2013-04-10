@@ -139,3 +139,21 @@
 	float: left;
 	padding-right: 10px;
 }
+
+.country-flags {
+	display: block;
+}
+
+#flag-serbia {
+	background: url('../img/country-flags/serbia.png') left top no-repeat;
+	width: 24px;
+	height:24px;
+	display: inline-block;
+}
+
+#flag-uk {
+	background: url('../img/country-flags/united-kingdom.png') left top no-repeat;
+	width: 24px;
+	height:24px;
+	display: inline-block;
+}

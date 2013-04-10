@@ -16,6 +16,10 @@
 		http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 		
     <mvc:annotation-driven validator="validator" />
+    <mvc:interceptors>
+    	<ref bean="localeChangeInterceptor" />
+    </mvc:interceptors>
+    
     <context:annotation-config />
     
     <context:component-scan base-package="rs.in.staleksit.timetracker.web.controllers" />
@@ -55,6 +59,12 @@
 	</util:list>
 	
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" 
-		p:validationMessageSource-ref="messageSource"/>		
+		p:validationMessageSource-ref="messageSource"/>
+		
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+		p:defaultLocale="en" />
+		
+	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+		p:paramName="lang" />		
 			
 </beans>

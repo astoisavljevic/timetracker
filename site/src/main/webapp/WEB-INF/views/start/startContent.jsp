@@ -16,5 +16,12 @@
 		<a class="btn btn-primary" href="<c:url value="/login"/>"><fmt:message key="startPage.btnLogIn" /></a>
 		<div class="spacer20"></div>
 		<a class="btn btn-info" href="<c:url value="/signIn"/>"><fmt:message key="startPage.btnSignIn" /></a>
+		<div class="spacer10"></div>
+		<div class="control-group">
+			<div class="pull-right country-flags">
+				<a id="flag-uk" href="<c:url value="/start?lang=en" />"></a>
+				<a id="flag-serbia" href="<c:url value="/start?lang=rs" />"></a>
+			</div>			
+		</div>
 	</section>
 </div>
