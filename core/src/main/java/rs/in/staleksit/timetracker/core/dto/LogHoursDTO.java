@@ -5,6 +5,8 @@ package rs.in.staleksit.timetracker.core.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -18,11 +20,13 @@ public class LogHoursDTO implements Serializable {
 	
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
 	private String hours;
-	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	@NotNull(message = "{validation.fieldMustNotBeEmpty}")
 	private Integer projectId;
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
-	private String description;
+	private String projectName;
 	@NotEmpty(message = "{validation.fieldMustNotBeEmpty}")
+	private String description;
+	@NotNull(message = "{validation.fieldMustNotBeEmpty}")
 	private Integer projectTaskId;
 	
 	public String getHours() {
@@ -37,13 +41,18 @@ public class LogHoursDTO implements Serializable {
 	public void setProjectId(Integer projectId) {
 		this.projectId = projectId;
 	}
+	public String getProjectName() {
+		return projectName;
+	}
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public Integer getProjectTaskId() {
 		return projectTaskId;
 	}

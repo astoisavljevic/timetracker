@@ -10,10 +10,20 @@
 	<div class="spacer5"></div>
 	<div class="row">
 		<div class="span12">
+			<spring:hasBindErrors name="logHours">
+				<div class="alert alert-error">
+					<strong>Error</strong>
+					<ul>
+						<c:forEach var="error" items="${errors.allErrors}">
+							<li>${error.field} ${error.defaultMessage}</li>
+						</c:forEach>
+					</ul>
+				</div>
+			</spring:hasBindErrors>
 			<form:form id="logHoursForm" class="well" method="POST" commandName="logHours">
 				<form:input path="hours" cssClass="input-mini" placeholder="HH:mm" autocomplete="off"/>
 				<form:hidden path="projectId"/>
-				<input id="projectName" name="projectName" placeholder="Project name" class="input-medium" type="text" autocomplete="off" data-provide="typeahead"/>
+				<form:input path="projectName" placeholder="Project name" cssClass="input-medium" autocomplete="off" data-provide="typeahead" />
 				<form:hidden path="projectTaskId"/>
 				<form:input id="description" path="description" cssClass="input-xlarge" placeholder="Description" autocomplete="off" data-provide="typeahead"/>
 				<button class="btn" type="submit">Log!</button>

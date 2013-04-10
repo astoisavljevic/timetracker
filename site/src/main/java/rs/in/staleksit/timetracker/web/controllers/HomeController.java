@@ -6,6 +6,8 @@ package rs.in.staleksit.timetracker.web.controllers;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,24 +44,28 @@ public class HomeController {
 		this.projectService = projectService;
 	}
 	
+	@ModelAttribute("logHours")
+	public void setUp(Model model) {
+		model.addAttribute("currentUser", userService.findByUsername(SecurityUtils.getPrincipal()));
+	}
+	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String handleHomeLoggedIn(@ModelAttribute("logHours") LogHoursDTO logHours, Model model) {
-		model.addAttribute("currentUser", userService.findByUsername(SecurityUtils.getPrincipal()));
 		return TimeTrackerRouter.HOME_VIEW;
 	}
 	
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public String handleLogHoursSubmit(@ModelAttribute("logHours") LogHoursDTO logHoursDTO, Model model, BindingResult result) {
+	public String handleLogHoursSubmit(@Valid @ModelAttribute("logHours") LogHoursDTO logHoursDTO, BindingResult result) {
 		if (log.isDebugEnabled()) {
-			log.debug(logHoursDTO.toString());
+			log.debug("-+- LogHours: {} -+-" + logHoursDTO.toString());
 		}
 		if (result.hasErrors()) {
-			// there were errors
+			return TimeTrackerRouter.HOME_VIEW;
 		} else {
 			TimeSheet timeSheet = projectService.create(logHoursDTO.getProjectTaskId(), userService.findByUsername(SecurityUtils.getPrincipal()), new Date(), new BigDecimal(logHoursDTO.getHours()), logHoursDTO.getDescription());
 			projectService.saveTimeSheet(timeSheet);
+			return "redirect:/" + TimeTrackerRouter.HOME_VIEW;
 		}
-		return "redirect:/" + TimeTrackerRouter.HOME_VIEW;
 	}
 	
 
