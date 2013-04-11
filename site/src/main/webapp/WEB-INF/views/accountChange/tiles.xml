@@ -8,7 +8,6 @@
 		<put-attribute name="content" type="template" value="/WEB-INF/views/accountChange/accountChangeContent.jsp" />
 		
 		<put-list-attribute name="styles">
-			<add-attribute type="string" value="/css/bootstrap-united.min.css" />
 			<add-attribute type="string" value="/css/bootstrap-responsive.min.css" />
 			<add-attribute type="string" value="/css/timetracker.css" />
 		</put-list-attribute>
