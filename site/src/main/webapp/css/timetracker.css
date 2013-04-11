@@ -18,11 +18,6 @@
 	}
 }
 
-/* ### Start Page ### **/
-.start-actions a {
-	width: 90%;
-}
-
 /* ### Login page ### **/
 .login-container {
 	width: 425px;
@@ -156,4 +151,8 @@
 	width: 24px;
 	height:24px;
 	display: inline-block;
+}
+
+.start-actions .btn {
+	width: 95%;
 }
