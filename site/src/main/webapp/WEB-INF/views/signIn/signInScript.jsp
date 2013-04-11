@@ -12,6 +12,14 @@
 			$("#emailControlGroup").addClass('error');
 		}
 		
+		if ($("#passwordError").length > 0) {
+			$("#passwordControlGroup").addClass('error');
+		}
+		
+		if ($("#retypePasswordError").length > 0) {
+			$("#retypePasswordControlGroup").addClass('error');
+		}
+		
 		$("#btnSignInCancel").click(function() {
 			window.location.href = "<c:url value='/start' />";
 		});

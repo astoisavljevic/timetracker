@@ -23,6 +23,7 @@
     <context:annotation-config />
     
     <context:component-scan base-package="rs.in.staleksit.timetracker.web.controllers" />
+    <context:component-scan base-package="rs.in.staleksit.timetracker.web.validators" />
     
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />

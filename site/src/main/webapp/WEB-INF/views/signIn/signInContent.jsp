@@ -32,14 +32,14 @@
 						<span class="help-inline"><form:errors id="usernameError" path="username" /></span>
 					</div>
 				</div>
-				<div class="control-group">
+				<div id="passwordControlGroup" class="control-group">
 					<label class="control-label" for="password"><fmt:message key="signInPage.lblPassword" />:</label>
 					<div class="controls">
 						<form:input path="password" type="password" cssClass="input-xlarge" placeholder="${passwordPlaceholder}"/>
 						<span class="help-inline"><form:errors id="passwordError" path="password" /></span>
 					</div>
 				</div>
-				<div class="control-group">
+				<div id="retypePasswordControlGroup" class="control-group">
 					<label class="control-label" for="retypePassword"><fmt:message key="signInPage.lblReTypePassword" />:</label>
 					<div class="controls">
 						<form:input path="retypePassword" type="password" cssClass="input-xlarge" placeholder="${retypePasswordPlaceholder}"/>
