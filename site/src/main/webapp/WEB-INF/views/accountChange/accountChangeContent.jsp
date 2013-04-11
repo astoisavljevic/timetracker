@@ -7,33 +7,33 @@
 		<form:form id="accountEditForm" method="POST" commandName="user">
 			<fieldset>
 				<div class="control-group">
-					<label class="control-label" for="username">Username:</label>
+					<label class="control-label" for="username"><fmt:message key="accountChangePage.lblUsername" />:</label>
 					<div class="controls">
 						<span class="input-xlarge uneditable-input">${currentUser.username}</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="email">E-mail account:</label>
+					<label class="control-label" for="email"><fmt:message key="accountChangePage.lblEmail" />:</label>
 					<div class="controls">
 						<form:input path="email" cssClass="input-xlarge"/>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="firstName">First name:</label>
+					<label class="control-label" for="firstName"><fmt:message key="accountChangePage.lblFirstname" />:</label>
 					<div class="controls">
 						<form:input path="firstName" cssClass="input-xlarge"/>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="lastName">Last name:</label>
+					<label class="control-label" for="lastName"><fmt:message key="accountChangePage.lblLastname" />:</label>
 					<div class="controls">
 						<form:input path="lastName" cssClass="input-xlarge" />
 					</div>
 				</div>
 				<div class="form-actions form-actions-account">
 					<div class="pull-right">
-						<button id="btnAccountChangeSave" class="btn btn-primary" type="submit">Save</button>
-						<button id="btnAccountChangeCancel" class="btn" type="reset">Cancel</button>
+						<button id="btnAccountChangeSave" class="btn btn-primary" type="submit"><fmt:message key="accountChangePage.btnSave" /></button>
+						<button id="btnAccountChangeCancel" class="btn" type="reset"><fmt:message key="accountChangePage.btnCancel" /></button>
 					</div>
 				</div>
 			</fieldset>

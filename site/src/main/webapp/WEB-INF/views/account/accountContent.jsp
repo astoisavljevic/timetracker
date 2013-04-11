@@ -7,33 +7,33 @@
 		<form id="accountForm" action="#">
 			<fieldset>
 				<div class="control-group">
-					<label class="control-label" for="username">Username:</label>
+					<label class="control-label" for="username"><fmt:message key="accountPage.lblUsername" />:</label>
 					<div class="controls">
 						<span class="input-xlarge uneditable-input">${user.username}</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="email">E-mail account:</label>
+					<label class="control-label" for="email"><fmt:message key="accountPage.lblEmail" />:</label>
 					<div class="controls">
 						<span class="input-xlarge uneditable-input">${user.email}</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="firstName">First name:</label>
+					<label class="control-label" for="firstName"><fmt:message key="accountPage.lblFirstname" />:</label>
 					<div class="controls">
 						<span class="input-xlarge uneditable-input">${user.firstName}</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="lastName">Last name:</label>
+					<label class="control-label" for="lastName"><fmt:message key="accountPage.lblLastname" />:</label>
 					<div class="controls">
 						<span class="input-xlarge uneditable-input">${user.lastName}</span>
 					</div>
 				</div>
 				<div class="form-actions form-actions-account">
 					<div class="pull-right">
-						<button id="btnAccountChange" class="btn btn-primary" type="submit" data-username="${user.id}">Change</button>
-						<button id="btnAccountCancel" class="btn" type="reset">Cancel</button>
+						<button id="btnAccountChange" class="btn btn-primary" type="submit" data-username="${user.id}"><fmt:message key="accountPage.btnChange" /></button>
+						<button id="btnAccountCancel" class="btn" type="reset"><fmt:message key="accountPage.btnCancel" /></button>
 					</div>
 				</div>
 			</fieldset>
