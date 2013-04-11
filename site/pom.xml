@@ -81,8 +81,6 @@
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 		</dependency>
-				
-
 	</dependencies>
 
 	<build>
