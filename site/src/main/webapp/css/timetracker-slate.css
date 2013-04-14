@@ -1,0 +1,74 @@
+/** Login page **/
+
+#login-header {
+	padding: 0px 15px;
+	margin-bottom: 1em;
+	background: #99356B;
+	background:-moz-linear-gradient(top, #B03D7B 0%, #772953 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#B03D7B), color-stop(100%,#772953)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top, #B03D7B 0%,#772953 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top, #B03D7B 0%,#772953 100%); /* Opera11.10+ */
+	background:-ms-linear-gradient(top, #B03D7B 0%,#772953 100%); /* IE10+ */
+	background:linear-gradient(top, #B03D7B 0%,#772953 100%); /* W3C */
+	border-radius: 5px;
+	text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+#login-header h3 {
+	margin-bottom: 0;
+	color: #FFF;
+	font-size: 1em;
+	text-decoration: 1px 1px 2px rgba(0,0,0,.4);
+}
+
+#login-content {
+    background: none repeat scroll 0 0 #202328;
+    border: 1px solid #101214;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#login-content input {
+	width: 96%;
+	padding: 2% 2%;
+}
+
+/** Home **/
+.home-title {
+	padding-bottom: 10px;
+}
+
+/** Account container **/
+.account-container {
+	width: 330px;
+	margin: 120px auto 0;	
+}
+
+#account-content {
+    background: none repeat scroll 0 0 #202328;
+    border: 1px solid #101214;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px 0px 20px;
+}
+
+#account-content input {
+	width: 96%;
+	padding: 2% 2%;
+}
+
+.form-actions-account {
+	padding: 15px 0px 0px 15px;
+	margin-bottom: 0px;
+}
+
+.well {
+    background-color:#202328;
+    border: 1px solid #101214;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 10px;
+}

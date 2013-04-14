@@ -11,7 +11,16 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>StaleksIT - Simple Time Tracker</title>
-		<link rel="stylesheet" href="<spring:theme code="css"/>" type="text/css" />
+		
+		<c:set var="bootstrapCss">
+			<spring:theme code="css"/>
+		</c:set>
+		<c:set var="customCss">
+			<spring:theme code="extendedCss" />
+		</c:set>
+			
+		<link rel="stylesheet" href="<c:url value="${bootstrapCss}"/>" type="text/css" />
+		<link rel="stylesheet" href="<c:url value="${customCss}"/>" type="text/css" />
 		<c:forEach items="${styles}" var="styleHref">
 			<link rel="stylesheet" type="text/css" href="<c:url value="${styleHref}"/>" />
 		</c:forEach>

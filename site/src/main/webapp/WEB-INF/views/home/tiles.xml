@@ -9,8 +9,7 @@
 		
 		<put-list-attribute name="styles">
 			<add-attribute type="string" value="/css/bootstrap-responsive.min.css" />
-			<add-attribute type="string" value="/css/timetracker.css" />
-			
+			<add-attribute type="string" value="/css/common.css" />
 		</put-list-attribute>
 		
 		<put-list-attribute name="scripts">
