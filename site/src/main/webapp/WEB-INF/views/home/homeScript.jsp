@@ -1,9 +1,16 @@
 <%@ include file="/WEB-INF/common/taglibs.jsp" %>
 
 <script>
-
+	var canvasData1 = [
+		{ value: 53.1, color:"#F38630" },
+		{ value: 100, color: "#E0E4CC"}
+	];
+	var canvasData2 = [{value: 18.75, color:"#F38630"}, {value: 100, color: "#E0E4CC"}];
 	// execute code on document ready
 	$(document).ready(function() {
+		new Chart(document.getElementById("canvas1").getContext("2d")).Pie(canvasData1);
+		new Chart(document.getElementById("canvas2").getContext("2d")).Pie(canvasData2);
+		
 		$("#hours").focus();
 
 		var projectListLabels, projectListMapped;

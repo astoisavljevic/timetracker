@@ -48,16 +48,24 @@
 				<table class="table table-bordered table-striped table-hover">
 					<thead>
 						<tr>
-							<th>#</th>
-							<th><fmt:message key="homePage.table.header.lblHours" /></th>
-							<th><fmt:message key="homePage.table.header.lblDescription" /></th>
+							<th width="5%">#</th>
+							<th width="30%"><fmt:message key="homePage.table.header.lblHours" /></th>
+							<th width="65%"><fmt:message key="homePage.table.header.lblDescription" /></th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="logHoursRecord" items="${loggedHours}" varStatus="theCount">
 							<tr>
 								<td>${theCount.index+1}</td>
-								<td>${logHoursRecord.hours}</td>
+								<td>
+									<div class="record-graph pull-left">
+										<canvas id="canvas${theCount.index+1}" height="30" width="30"></canvas>
+									</div>
+									<div class="record-data pull-right">
+										<span class="record-data-label">${logHoursRecord.minutesHumanReadableFormat}</span>
+									</div>
+									<div class="clearfix"></div>
+								</td>
 								<td>${logHoursRecord.description}</td>
 							</tr>
 						</c:forEach>

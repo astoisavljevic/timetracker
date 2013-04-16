@@ -9,6 +9,7 @@ import java.util.List;
 
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
+import rs.in.staleksit.timetracker.core.dto.TimeSheetDTO;
 import rs.in.staleksit.timetracker.core.project.ActivityType;
 import rs.in.staleksit.timetracker.core.project.TimeSheet;
 
@@ -59,5 +60,5 @@ public interface ProjectService {
 	 * 
 	 * @return
 	 */
-	List<TimeSheet> findRecentLoggedHoursForUser(User user);
+	List<TimeSheetDTO> findRecentLoggedHoursForUser(User user);
 }

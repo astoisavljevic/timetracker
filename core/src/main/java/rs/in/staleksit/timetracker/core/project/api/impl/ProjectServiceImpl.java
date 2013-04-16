@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,19 @@ import org.springframework.transaction.annotation.Transactional;
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.impl.UserImpl;
 import rs.in.staleksit.timetracker.core.dto.ProjectDTO;
+import rs.in.staleksit.timetracker.core.dto.TimeSheetDTO;
 import rs.in.staleksit.timetracker.core.project.ActivityType;
 import rs.in.staleksit.timetracker.core.project.Project;
 import rs.in.staleksit.timetracker.core.project.TimeSheet;
 import rs.in.staleksit.timetracker.core.project.api.ProjectService;
+import rs.in.staleksit.timetracker.core.util.DateUtils;
 import rs.in.staleksit.timetracker.core.util.ProjectMapper;
+import rs.in.staleksit.timetracker.core.util.TimeSheetMapper;
 
+import com.mysema.query.annotations.QueryDelegate;
 import com.mysema.query.types.expr.BooleanExpression;
+import com.mysema.query.types.path.DateTimePath;
+
 
 /**
  * @author a.stoisavljevic
@@ -135,16 +142,22 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	@Transactional(value = "transactionManager", readOnly = true, propagation = Propagation.SUPPORTS)
-	public List<TimeSheet> findRecentLoggedHoursForUser(User user) {
+	public List<TimeSheetDTO> findRecentLoggedHoursForUser(User user) {
+		DateTime dtNow = new DateTime();
+		DateTime dtBeginingToday = DateUtils.beginningOfDay(dtNow);
+		DateTime dtEndToday = DateUtils.endOfDay(dtNow);
+		
 		QTimeSheetImpl timeSheet = QTimeSheetImpl.timeSheetImpl;
 		// find timesheet records that belongs to this user
 		BooleanExpression isEqualUser = timeSheet.user.username.eq(user.getUsername());
-		Page<TimeSheetImpl> timeSheetResults = timeSheetRepository.findAll(isEqualUser, new PageRequest(0, 10));
+		BooleanExpression isToday = timeSheet.startedAt.between(dtBeginingToday.toDate(), dtEndToday.toDate());
+		
+		Page<TimeSheetImpl> timeSheetResults = timeSheetRepository.findAll(isEqualUser.and(isToday), new PageRequest(0, 10));
 		List<TimeSheet> result = new ArrayList<TimeSheet>();
 		for (TimeSheetImpl item: timeSheetResults) {
 			result.add(item);
 		}
-		return result;
+		return TimeSheetMapper.map(result);
 	}
-	
+		
 }
