@@ -59,7 +59,7 @@
 								<td>${theCount.index+1}</td>
 								<td>
 									<div class="record-graph pull-left">
-										<canvas id="canvas${theCount.index+1}" height="30" width="30"></canvas>
+										<canvas id="canvas-${logHoursRecord.id}" height="30" width="30" data-time="${logHoursRecord.workPart}"></canvas>
 									</div>
 									<div class="record-data pull-right">
 										<span class="record-data-label">${logHoursRecord.minutesHumanReadableFormat}</span>

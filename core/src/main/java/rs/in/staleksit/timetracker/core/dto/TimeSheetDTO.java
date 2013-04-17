@@ -77,6 +77,12 @@ public class TimeSheetDTO implements Serializable {
 		sb.append(String.format("%dh:%02dm", hours, leftOver));
 		return sb.toString();
 	}
+
+	public float getWorkPart() {
+		float percentage = minutes.floatValue()/480; 
+		return percentage * 100;
+	}
+	
 	
 	
 	
