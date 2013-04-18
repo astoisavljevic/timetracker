@@ -77,7 +77,8 @@
 		p:paramName="theme" />			
 	
 	<bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver"
-		p:defaultThemeName="default" />
+		p:defaultThemeName="default" 
+		p:cookieName="ttTheme" />
 		
 				
 </beans>

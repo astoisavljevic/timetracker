@@ -30,6 +30,19 @@
 						<form:input path="lastName" cssClass="input-xlarge" />
 					</div>
 				</div>
+				<div class="control-group">
+					<label class="control-label" for="theme"><fmt:message key="accountChangePage.lblTheme" />:</label>
+					<div class="controls">
+						<select id="theme" name="theme" class="input-xlarge">
+							<option value="default">United</option>
+							<option value="simplex">Simplex</option>
+							<option value="slate">Slate</option>
+							<option value="spacelab">Spacelab</option>
+						</select>
+					</div>
+				</div>
+				
+				
 				<div class="form-actions form-actions-account">
 					<div class="pull-right">
 						<button id="btnAccountChangeSave" class="btn btn-primary" type="submit"><fmt:message key="accountChangePage.btnSave" /></button>
