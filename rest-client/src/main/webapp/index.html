@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- ### define what is character set to use ### -->
+		<meta charset="UTF-8">
+		<!-- ### instruct IE to use latest rendering engine ### -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>Simple Time Tracker</title>
+		
+		<meta name="Copyright" content="StaleksIT" />
+		<meta name="Author" content="Aleksandar Stoisavljevic" />
+		
+		<!-- ### render on devices as well ### -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		<!-- ### define CSS ###  -->
+		<link rel="stylesheet" href="css/bootstrap-united.min.css">
+		<link rel="stylesheet" href="css/timetracker-united.css">
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">		
+		<link rel="stylesheet" href="css/common.css">
+		
+		<!-- ### define JS ### -->
+		<script src="js/libs/jquery/jquery-1.9.1.min.js"></script>
+		<script src="js/libs/backbone/json2.js"></script>
+		<script src="js/libs/underscore/underscore.js"></script>
+		<script src="js/libs/backbone/backbone.js"></script>
+		
+		<script src="js/router.js"></script>
+		<script src="js/timetracker.js"></script>
+	</head>
+	<body class="preview">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- Be sure to leave the brand out there if you want it shown -->
+					<a class="brand" href="#">StaleksIT</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<header id="overview" class="jumbotron subhead">
+				<div class="row">
+					<div class="span6">
+						<h1>Time Track</h1>
+						<p class="lead">simple time tracker application</p>
+					</div>
+					<div class="span6">&nbsp;</div>
+				</div>	
+			</header>
+			<div class="page-header">&nbsp;</div>
+			<section class="start-actions center">
+				<div class="row">
+					<div class="span12">
+						<a class="btn btn-primary" href="#">Log In</a>
+						<div class="spacer20"></div>
+			 			<a class="btn btn-info" href="#">Sign In</a>
+						<div class="spacer20"></div>
+					</div>
+				</div>
+			</section>
+		</div>		
+	</body>
+</html>
