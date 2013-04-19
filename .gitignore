@@ -17,3 +17,10 @@ site/target/
 site/.classpath
 site/test-output/
 site/.springBeans
+
+rest-client/target/
+rest-client/.classpath
+rest-client/test-output/
+rest-client/.springBeans
+
+
