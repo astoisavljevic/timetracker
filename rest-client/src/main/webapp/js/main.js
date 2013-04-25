@@ -4,11 +4,20 @@ require.config({
 		underscore: 'libs/underscore/underscore-min',
 		backbone: 'libs/backbone/backbone-min',
 		templates: '../templates'
+	},
+	shim: {
+		underscore: {
+			exports: '_'
+		},
+		backbone: {
+			deps: ["underscore", "jquery"],
+			exports: "Backbone"
+		}
 	}
 });
 
 require([
          'app',
 ], function(App) {
-	console.log('+ app +');
+	App.initialize();
 });
