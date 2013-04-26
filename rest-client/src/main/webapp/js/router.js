@@ -1,29 +1,36 @@
-define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
+define([
+        'jquery', 
+        'underscore', 
+        'backbone',
+        'views/start/startView',
+        'views/login/loginView',
+        'views/signin/signInView'
+], function($, _, Backbone, StartView, LoginView, SignInView) {
 
 	var TimeTrackerRouter = Backbone.Router.extend({
 		routes: {
-			"start": "start",
+			"": "start",
 			"login": "login",
-			"*actions": "defaultRoute"
+			"signIn": "signin",
 		},
-		defaultRoute: function() {
-			console.log('-+- defaultRoute -+-');
+		start: function() {
+			var startView = new StartView({router: this});
+			startView.render();
+		},
+		login: function() {
+			var loginView = new LoginView({router: this});
+			loginView.render();
+		},
+		signin: function() {
+			var signInView = new SignInView({router: this});
+			signInView.render();
 		}
 	});
 	
 	var initialize = function() {
 		
 		var timeTrackerRouter = new TimeTrackerRouter;
-		
-		timeTrackerRouter.on('route:start', function() {
-			console.log('-+- start -+-');
-		});
-		
-		timeTrackerRouter.on('route:login', function() {
-			console.log('-+- login -+-');
-		});
-		
-		
+				
 		Backbone.history.start();
 	};
 	
