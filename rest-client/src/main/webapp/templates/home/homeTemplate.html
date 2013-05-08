@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="home-title">
+		<span>TimeSheet for:</span>
+	</div>
+	<div class="spacer5"></div>
+	<div class="row">
+		<div class="span12">
+			<form id="logHoursForm" class="well">
+				<input type="text" id="hours" name="hours" class="input-mini" placeholder="HH:mm" autocomplete="off"/>
+				<input type="hidden" name="projectId" />
+				<input type="text" id="projectName" name="projectName" placeholder="Project Name" class="input-medium" autocomplete="off" data-provide="typeahead" />
+				<input type="hidden" id="projectTaskId" name="projectTaskId" />
+				<input type="text" id="description" name="description" class="input-xlarge" placeholder="Description" autocomplete="off" data-provide="typeahead"/>
+				<button class="btn" type="submit">Log!</button>
+			</form>
+		</div>
+	</div>
+	<div class="spacer5"></div>
+	<div class="row">
+		<div class="span12">
+			<div class="page-header">
+				<div id="profileImageHolder"><img src="/img/profiles/currentUser.png" alt="profileImage"></div><h3 id="lblYourRecentEntries">Recent entries</h3>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>	
+</div>

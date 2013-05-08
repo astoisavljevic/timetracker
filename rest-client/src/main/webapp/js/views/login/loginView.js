@@ -5,12 +5,13 @@ define([
         'text!templates/login/loginTemplate.html',
 ], function($, _, Backbone, loginTemplate) {
 	var LoginView = Backbone.View.extend({
+		
 		el: $('#pageContainer'),
 		
 		initialize: function(opts) {
 			this.router = opts.router;
+			LoginView.self = this;
 		},
-
 		
 		render: function() {
 			this.$el.html(loginTemplate);
@@ -29,7 +30,7 @@ define([
 				},
 				success: function(data) {
 					if (data && data.status === "ok") {
-						console.log("data: username:" + data.username); 
+						LoginView.self.router.navigate("home", {trigger: true, pushState: true}); 
 					} else {
 						console.log('invalid login data. Status: ' + data.status);
 					}
