@@ -19,7 +19,22 @@ define([
 			"click #btnLogin": "login",
 		},
 		login: function() {
-			console.log("-+- go to server and log -+-");
+			var username = $(this.el).find("#j_username").val();
+			var password = $(this.el).find("#j_password").val();
+			$.ajax({
+				url: "http://localhost:8080/timetracker/api/login.json",
+				data: {
+					username: username,
+					password: password
+				},
+				success: function(data) {
+					if (data && data.status === "ok") {
+						console.log("data: username:" + data.username); 
+					} else {
+						console.log('invalid login data. Status: ' + data.status);
+					}
+				}
+			});
 		},
 	});
 	

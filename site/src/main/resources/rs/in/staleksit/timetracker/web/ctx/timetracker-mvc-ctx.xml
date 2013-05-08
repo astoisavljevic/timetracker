@@ -80,5 +80,7 @@
 		p:defaultThemeName="default" 
 		p:cookieName="ttTheme" />
 		
+	<!-- ### delegating JSONPCallback to be configured in Spring way ### -->
+    <bean id="jsonpCallbackFilter" class="rs.in.staleksit.timetracker.web.filter.JsonpCallbackFilter" />
 				
 </beans>

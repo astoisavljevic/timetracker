@@ -16,6 +16,7 @@
 	<http pattern="/error" security="none" />
 	<http pattern="/login" security="none" />
 	<http pattern="/signIn" security="none" />
+	<http pattern="/api/*.json" security="none" />
 	<http pattern="/index.jsp" security="none" />
     
     <http use-expressions="true">
