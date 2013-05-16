@@ -17,9 +17,10 @@ define([
 		
 		render: function() {
 			this.$el.html(loginTemplate);
+			$('#mainNavigationSection').css("display", "none");
 		},
 		events: {
-			"click #btnLogin": "login",
+			"click #btnLogin": "login"
 		},
 		login: function() {
 			var username = $(this.el).find("#j_username").val();
@@ -32,14 +33,14 @@ define([
 				},
 				success: function(data) {
 					if (data && data.status === "ok") {
-						Util.login(username);
+						Util.login(data.userId, username);
 						LoginView.self.router.navigate("home", {trigger: true, pushState: true}); 
 					} else {
 						console.log('invalid login data. Status: ' + data.status);
 					}
 				}
 			});
-		},
+		}
 	});
 	
 	return LoginView;

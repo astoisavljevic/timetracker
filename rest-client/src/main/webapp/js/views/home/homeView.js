@@ -13,6 +13,7 @@ define([
 		},
 		
 		render: function() {
+			this.$el.html(homeTemplate);
 			$.ajax({
 				url: TimeTrackerConfig.serverURL + 'api/project-list.json',
 				data: {
@@ -20,15 +21,17 @@ define([
 				},
 				success: function(data) {
 					if (data && data.status === "ok") {
-						console.log('fetched data from server');
+						var profileImageSrc = TimeTrackerConfig.serverURL + 'img/profiles/' + TimeTrackerConfig.userId + ".png";
+						$('#profileImage').attr('src', profileImageSrc);
+						$('#mainNavigationSection').css("display", "block");
 					} else {
 						console.log('invalid login data. Status: ' + data.status);
 					}
 				}
 			});
 			
-			this.$el.html(homeTemplate);
 		}
+		
 	});
 	
 	return HomeView;

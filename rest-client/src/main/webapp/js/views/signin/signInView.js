@@ -14,6 +14,7 @@ define([
 		
 		render: function() {
 			this.$el.html(signInTemplate);
+			$('#mainNavigationSection').css("display", "none");			
 		},
 		events: {
 			"click #btnSignInSave": "signin",

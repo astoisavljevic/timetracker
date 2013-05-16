@@ -2,11 +2,17 @@ define([
         'config'
 ],function(TimeTrackerConfig){
 	var Util = {
-			login: function(username) {
+			login: function(userId, username) {
 				TimeTrackerConfig.username = username;
-				console.log('set username in store');
+				TimeTrackerConfig.userId = userId;
+			},
+			logout: function() {
+				TimeTrackerConfig.username = "";
+				TimeTrackerConfig.userId = "";				
 			}
 	};
+	
+	
 	
 	return Util;
 });

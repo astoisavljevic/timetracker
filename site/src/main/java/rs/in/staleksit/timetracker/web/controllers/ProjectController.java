@@ -75,6 +75,7 @@ public class ProjectController {
 		User currentUser = userService.findByUsername(username);
 		List<TimeSheetDTO> loggedHours = projectService.findRecentLoggedHoursForUser(currentUser);
 		result.put("loggedHours", loggedHours);
+		result.put("status", "ok");
 		return result;
 	}
 

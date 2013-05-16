@@ -20,7 +20,9 @@
 		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">		
 		<link rel="stylesheet" href="css/common.css">
 		
+		<script src="js/libs/jquery/jquery-1.9.1.min.js"></script>
 		<script src="js/libs/modernizr/modernizr.js"></script>
+		<script src="js/libs/bootstrap/bootstrap.js"></script>
 				
 		<script data-main="js/main" src="js/libs/require/require.js"></script>
 	</head>
@@ -30,6 +32,26 @@
 				<div class="container">
 					<!-- Be sure to leave the brand out there if you want it shown -->
 					<a class="brand" href="#">StaleksIT</a>
+						<ul id="mainNavigationSection" class="nav pull-right">
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">
+									username									
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="javascript:void(0);">Account</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">Test</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a id="btnLogout" href="#logout">LogOut</a>
+									</li>
+								</ul>
+							</li>
+						</ul>					
 				</div>
 			</div>
 		</div>

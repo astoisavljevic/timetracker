@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public interface User extends UserDetails {
 	
+	Integer getId();
+	
 	String getEmail();
 	
 	String getFirstName();

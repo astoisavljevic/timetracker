@@ -6,16 +6,19 @@ define([
         'views/login/loginView',
         'views/signin/signInView',
         'views/home/homeView',
-], function($, _, Backbone, StartView, LoginView, SignInView, HomeView) {
+        'util'
+], function($, _, Backbone, StartView, LoginView, SignInView, HomeView, Util) {
 
 	var TimeTrackerRouter = Backbone.Router.extend({
 		routes: {
 			"": "start",
 			"login": "login",
 			"signIn": "signin",
-			"home": "home"
+			"home": "home",
+			"logout": "start"
 		},
 		start: function() {
+			Util.logout();
 			var startView = new StartView({router: this});
 			startView.render();
 		},
@@ -30,7 +33,7 @@ define([
 		home: function() {
 			var homeView = new HomeView({router: this});
 			homeView.render();
-		}
+		},
 	});
 	
 	var initialize = function() {

@@ -14,6 +14,7 @@ define([
 		
 		render: function() {
 			this.$el.html(startTemplate);
+			$('#mainNavigationSection').css("display", "none");
 		},
 		events: {
 			"click #btnLogin": "login",

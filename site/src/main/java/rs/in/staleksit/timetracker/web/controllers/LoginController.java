@@ -30,6 +30,7 @@ import rs.in.staleksit.timetracker.web.router.TimeTrackerRouter;
 @Controller
 public class LoginController {
 	
+	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 	
 	private static final String LOGIN_USER_NOT_IN_SYSTEM = "user-null";
@@ -60,6 +61,7 @@ public class LoginController {
 			if (user.isEnabled()) {
 				if (user.getPassword().equals(password)) {
 					result.put("username", user.getUsername());
+					result.put("userId", user.getId());
 					result.put("status", LOGIN_USER_OK);
 				} else {
 					result.put("status", LOGIN_USER_INVALID_LOGIN);
