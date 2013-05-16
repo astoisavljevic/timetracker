@@ -30,9 +30,7 @@ import rs.in.staleksit.timetracker.core.util.DateUtils;
 import rs.in.staleksit.timetracker.core.util.ProjectMapper;
 import rs.in.staleksit.timetracker.core.util.TimeSheetMapper;
 
-import com.mysema.query.annotations.QueryDelegate;
 import com.mysema.query.types.expr.BooleanExpression;
-import com.mysema.query.types.path.DateTimePath;
 
 
 /**

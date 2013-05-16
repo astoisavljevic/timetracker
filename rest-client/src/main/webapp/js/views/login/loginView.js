@@ -3,7 +3,9 @@ define([
         'underscore', 
         'backbone',
         'text!templates/login/loginTemplate.html',
-], function($, _, Backbone, loginTemplate) {
+        'config',
+        'util'
+], function($, _, Backbone, loginTemplate, TimeTrackerConfig, Util) {
 	var LoginView = Backbone.View.extend({
 		
 		el: $('#pageContainer'),
@@ -23,13 +25,14 @@ define([
 			var username = $(this.el).find("#j_username").val();
 			var password = $(this.el).find("#j_password").val();
 			$.ajax({
-				url: "http://localhost:8080/timetracker/api/login.json",
+				url: TimeTrackerConfig.serverURL + 'api/login.json',
 				data: {
 					username: username,
 					password: password
 				},
 				success: function(data) {
 					if (data && data.status === "ok") {
+						Util.login(username);
 						LoginView.self.router.navigate("home", {trigger: true, pushState: true}); 
 					} else {
 						console.log('invalid login data. Status: ' + data.status);

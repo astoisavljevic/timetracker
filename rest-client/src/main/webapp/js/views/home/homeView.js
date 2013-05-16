@@ -3,7 +3,8 @@ define([
         'underscore', 
         'backbone',
         'text!templates/home/homeTemplate.html',
-], function($, _, Backbone, homeTemplate) {
+        'config'
+], function($, _, Backbone, homeTemplate, TimeTrackerConfig) {
 	var HomeView = Backbone.View.extend({
 		el: $('#pageContainer'),
 		
@@ -12,6 +13,20 @@ define([
 		},
 		
 		render: function() {
+			$.ajax({
+				url: TimeTrackerConfig.serverURL + 'api/project-list.json',
+				data: {
+					username: TimeTrackerConfig.username,
+				},
+				success: function(data) {
+					if (data && data.status === "ok") {
+						console.log('fetched data from server');
+					} else {
+						console.log('invalid login data. Status: ' + data.status);
+					}
+				}
+			});
+			
 			this.$el.html(homeTemplate);
 		}
 	});
