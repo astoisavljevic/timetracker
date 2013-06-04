@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import rs.in.staleksit.timetracker.core.account.User;
 import rs.in.staleksit.timetracker.core.account.api.UserService;
@@ -92,6 +93,17 @@ public class AccountController {
 			resultView =  "redirect:/" + TimeTrackerRouter.ACCOUNT_VIEW;
 		}
 		return resultView;
+	}
+	
+	@RequestMapping(value = "/api/account.json", method = RequestMethod.GET)
+	public @ResponseBody UserDTO handleAccount(HttpServletRequest request, @RequestParam("username") String username) {
+		User user = userService.findByUsername(username);
+		if (user != null) {
+			UserDTO result = new UserDTO(user);
+			return result;
+		} else {
+			return null;
+		}
 	}
 
 }

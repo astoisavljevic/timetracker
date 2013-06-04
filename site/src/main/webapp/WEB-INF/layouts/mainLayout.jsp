@@ -28,6 +28,7 @@
 		<c:forEach items="${scripts}" var="scriptSrc">
 			<script type="text/javascript" src="<c:url value="${scriptSrc}"/>"></script>
 		</c:forEach>
+		<link rel="shortcut icon" href="<c:url value="/img/stopwatch_run.ico" />" />
 	</head>
 	<body class="preview">
 		<div class="navbar navbar-fixed-top">

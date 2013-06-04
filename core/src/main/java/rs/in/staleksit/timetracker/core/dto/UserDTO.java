@@ -34,6 +34,8 @@ public class UserDTO implements Serializable {
 	@Length(max = 80, message = "{validation.fieldExceedsMaxLength}")
 	private String lastName;
 	
+	private String username;
+	
 	public UserDTO() {
 		
 	}
@@ -42,6 +44,7 @@ public class UserDTO implements Serializable {
 		this.email = user.getEmail();
 		this.firstName = user.getFirstName();
 		this.lastName = user.getLastName();
+		this.username = user.getUsername();
 	}
 
 	public String getEmail() {
@@ -68,6 +71,14 @@ public class UserDTO implements Serializable {
 		this.lastName = lastName;
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
