@@ -16,11 +16,13 @@ define([
 			
 		initialize: function() {
 			console.log(' -+- accountView initialized -+-');
-			this.model.fetch();
-			_.bindAll(this, 'render');			
+			_.bindAll(this, 'render');
+			this.model.bind('change', this.render);
+	        this.model.fetch(this.model.url);
 		},
 		
 		render: function() { 
+			console.log(' -+- accountView render ENTER -+-');
 			this.$el.html(_.template(accountTemplate, this.model.toJSON()));
 		}
 		
